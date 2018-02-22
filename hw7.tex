@@ -80,6 +80,12 @@
 
 \newtheorem*{lemma*}{Lemma}
 
+% Roman numerals
+\makeatletter
+\newcommand{\Romnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+\newcommand{\factor}[1]{\text{\Romnum{#1}}}
+
 \begin{document}
 % \maketitle
 
@@ -98,7 +104,7 @@ Functional Analysis 2\\
 		\setcounter{enumi}{83}
  \item 
 		\begin{enumerate}
-			\item 
+			\item Fix $n\ge 2$. We may naturally identify $S_n\cong\set{\phi\in S_n:\phi(m)=m\text{ for all }m>n}\subseteq S_\infty$. There are infinitely many subgroups conjugate to $S_n$ in $S_\infty$ with trivial intersection: if $\phi_{n,k}=\prod_{j=1}^n(j,kn+j)$, then $\phi_{n,k}S_n\phi_{n,k}\bigcap\phi_{n,i}S_n\phi_{n,i}$ is trivial whenever $i\neq j$. Since every $\phi\in S_\infty$ lies in some $S_n$, if $\phi$ is not the identity, there are infinitely many distinct conjugates of $\phi$ in $S_\infty$. Therefore, $S_\infty$ is ICC. We proved in class that this makes $LS_\infty$ a type $\factor{2}_1$ factor. 
 			\item 
 			\item 
 		\end{enumerate}
