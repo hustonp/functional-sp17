@@ -121,8 +121,8 @@ Functional Analysis 2\\
 			\end{proof}
 		\end{enumerate}
 		\setcounter{enumi}{85}
- \item 
- 
+
+\item
  Let $M$ be a factor.
  Prove that if $M$ is finite or purely infinite, then $M$ is algebraically simple.
  \begin{proof}
@@ -157,8 +157,31 @@ Functional Analysis 2\\
 	Thus, we may find a projection in $I$ with trace double that of $p$.
 	Repeating this if necessary, we eventually arrive at a projection of trace at least $\frac{1}{2}$,
 	so by the previous case, $I = M$.
- \end{proof}
- 
+
+		Finally, consider the case that $M$ is a purely infinite factor, that is, type $\factor{3}$, and suppose that $M$ is countably decomposable. In this case, we adapt a proof from Jesse Peterson's notes on Von Neumann algebras. Let $p\in P(M)\setminus\set{0}$ be a non-zero projection. We will show that $p\approx 1$. First, we find $q\le p$ with $q\approx 1-q\approx p$. Since $p$ must be infinite, there is some partial isometry $u\in M$ with $u^*u=p$ and $uu^*<p$ yet $uu^*\approx p$. Define $p_0=1-uu^*$, and for $n\in\N$, define $p_n=u^np_0u^*$. Then $p_n$ is a projection, and since $uu^*\le p$ and $u^*u\le p$, we have $p_n\le p$. 
+		
+		For $n>m$, we have 
+		\begin{align*}
+			p_np_m &= (u^n(1-uu^*)(u^*)^n)(u^m(1-uu^*)(u^*)^m)\\
+			&= u^n(u^*)^nu^m(u^*)^m-u^n(u^*)^nu^{m+1}(u^*)^{m+1}-u^{n+1}(u^*)^{n+1}u^m(u^*)^m+u^{n+1}(u^*)^{n+1}u^{m+1}(u^*)^{m+1}\\
+			\intertext{Since $uu^*\le p$ and $u^*u\le p$, the presence of $p=u^*u$ in the above terms is redundant. Cancelling $m+1$ times gives }
+			p_np_m &= u^n(u^*)^{n-m}u^*m-u^n(u^*){n-(m+1)}(u^*)^{m+1}-u^{n+1}(u^*)^{(n+1)-m}(u^*)^m+u^{n+1}(u^*)^{n-m}(u^*)^{m+1}\\
+			&= 0
+		\end{align*}
+		Also notice that just as $up_nu^*=p_{n+1}$, we have $u^*p_nu=(u^*u)u^{n-1}p_0(u^*)^{n-1}(u^*u)=p_{n-1}$; for all $n$ and $m$, we have $p_n\approx p_m$. Therefore, $(p_n)_{n\in\N}$ is a sequence of mutually orthogonal projections, each equivalent to $p_0$ and bounded above by $p$. 
+
+		By Zorn's lemma, we may extend $(p_n)_{n\in\omega}$ to a maximal family of mutually orthogonal equivalent projections bounded above by $p$, say $(q_n)_{n\in\omega}$; we may assume the family is countable since $M$ is countably decomposable. Let $q_\omega=1-\sum_{n\in\omega}q_n$. If $q_\omega\succ q_0$, then there exists $v$ a partial isometry with $v^*v\le q_\omega$ and $vv^*\approx p_0$, contradicting the maximality of $(q_n)_{n\in\omega}$. Therefore, $q_\omega\prec q_0$. But we know that if $(a_i)$ and $(b_i)$ are families of mutually orthogonal projections with $a_i\prec b_i$ for each $i$, then $\sum_ia_i\prec\sum_ib_i$. % HERE why
+		In particular, picking some bijection between $\omega+1$ and $\omega$, we have 
+		\[p=\sum_{n\in(\omega+1)}q_n\prec\sum_{n\in\omega}q_n\le p\], and hence $\sum_{n\in\omega}q_n\approx p$. Similarly, $p\approx\sum_{n\in\omega}q_{2n}\approx\sum_{n\in\omega}q_{2n+1}$, so letting $q=\sum_{n\in\omega}q_{2n}$, we have $q\le p$ and $q,p-q\approx p$. 
+
+		By repeating the above with $p_0=q$, we may as well assume that $p_0\approx p-p_0\approx p$ in the first place. Further extend $(q_n)_{n\in\omega}$ to a maximal family of mutually orthogonal projections $(r_n)_{n\in\omega}$ with each $r_n\prec p$; this family is still countable, again by countable decomposability of $M$. If $1-\sum_{n\in\omega}r_n\neq 0$, then just as before, we can find $r_\omega\le 1-\sum_{n\in\omega}r_n$ such that $r_\omega\prec p$, contradicting maximality. Therefore, $1=\sum_{n\in\omega}r_n$. Since each $p_n\approx p_0\approx p$, we have 
+		\[1=\sum_{n\in\omega}r_n\prec\sum_{n\in\omega}p_n\le p\]
+	 so we have $1\approx p$. 
+
+  This means that there is a partial isometry $u$ with $u^*u=1$ and $uu^*=p$, so that $1=u^*(uu^*)u$ is conjugate to $p$ in $M$. If $I\subseteq M$ is a non-zero two-sided ideal, then by a previous application of the spectral theorem, % HERE was that why? Say more?
+		there is a non-zero projection $p\in I$, and consequently, $1\in I$ and $I=M$.
+		
+		\end{proof}
  \item 
  \item 
 \end{enumerate}
