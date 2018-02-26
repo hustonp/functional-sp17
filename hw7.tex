@@ -10,6 +10,21 @@
 \usepackage{mathrsfs}
 \usepackage{bm}
 
+% Blind inclusion of Zach's header.
+\usepackage{bbm}
+% \usepackage{mathtools}
+\usepackage{tikz-cd}
+\usepackage{stackengine}
+% \usepackage{Math_Symbols} % couldn't find
+% \usepackage{amsmath, amsthm, amssymb}
+% \usepackage{mathrsfs}
+\usepackage{ifpdf}
+\ifpdf
+%\usepackage[pdftex]{graphicx}
+%\else
+%\usepackage[dvips]{graphicx}
+%\fi
+
 \setenumerate{listparindent=\parindent,topsep=\parskip}
 % \setlist[enumerate]{topsep=\parskip}
 \setlist[enumerate,2]{label=(\arabic*)}
@@ -48,7 +63,7 @@
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\Ba}{\ensuremath Ba}
 \newcommand{\del}{\partial}
-\newcommand{\tens}{\otimes}
+\newcommand{\textns}{\otimes}
 \newcommand{\rar}[2][]{\overset{#2}{\underset{#1}{\longrightarrow}}}
 
 \DeclareMathOperator{\img}{img}
@@ -63,6 +78,7 @@
 % \DeclareMathOperator{\Rp}{Rp}
 \DeclareMathOperator{\rng}{rng}
 \DeclareMathOperator{\Spec}{spec}
+\DeclareMathOperator{\spec}{spec} % match Zach
 \DeclareMathOperator{\Rng}{Rng}
 \DeclareMathOperator{\Cov}{Cov}
 \DeclareMathOperator{\Var}{Var}
@@ -183,7 +199,92 @@ Functional Analysis 2\\
 		
 		\end{proof}
  \item 
- \item 
+		A positive linear functional $\varphi \in M^*$ is called \textit{completely additive} if for any family of pairwise orthogonal projections $\left( p_i \right)$, $\varphi \left( \sum p_i \right) = \sum \varphi \left( p_i \right)$, where $\sum p_i$ converges SOT.\\
+		Suppose $\varphi , \psi \in M^*$ are completely additive and $p \in P \left( M \right)$ such that $\varphi \left( p \right) < \psi \left( p \right)$.  Then there is a nonzero projection $q \leq p$ such that $\varphi \left( q x q \right) < \psi \left( q x q \right)$ for all $x \in M_+$.\\\
+		\proof
+		Let $\mathcal E = \left\{ e_i \mid i \in I \right\}$ be a maximal family of mutually orthogonal projections such that $e_i \leq p$ and $\psi \left( e_i \right) \leq \varphi \left( e_i \right)$ for all $i \in I$.\\
+		Let $e = \bigvee_{i \in I} e_i$.  Then
+
+		\begin{align*}
+				\psi \left( e \right)%
+				&= \psi \left( \bigvee_{i \in I} e_i \right)\\
+				&= \psi \left( \sum_{i \in I} e_i \right), \quad \text{ since the $e_i$ are mutually orthogonal}\\
+				&= \sum_{i \in I} \psi \left( e_i \right), \quad \text{ since $\psi$ is completely additive}\\
+				&\leq \sum_{i \in I} \varphi \left( e_i \right)\\
+				&= \varphi \left( \sum_{i \in I} e_i \right), \quad \text{ since $\varphi$ is completely additive}\\
+				&= \varphi \left( \bigvee_{i \in I} e_i \right)\\
+				&= \varphi \left( e \right),
+		\end{align*}
+
+		so that $\psi \left( e \right) \leq \varphi \left( e \right)$.  Note that this tells us that $e \neq p$.\\
+		Take $q = p - e \neq 0$.  Then for all $r \leq q$, we must have $\psi \left( r \right) < \varphi \left( r \right)$, or else $\mathcal E \cup \left\{ r \right\}$ would be a larger family satisfying the stated properties, contradicting maximality of $\mathcal E$.\\
+		Next, note that $\psi - \varphi \geq 0$, because on positive linear combinations of mutually orthogonal projections, we have
+
+		\begin{align*}
+				\left( \psi - \varphi \right) \left( \sum_{i = 1}^n \alpha_i p_i \right)%
+				&= \sum_{i = 1}^n \alpha_i \left( \psi - \varphi \right) \left( p_i \right) \geq 0,
+		\end{align*}
+
+		since $\left( \psi - \varphi \right) \left( p_i \right) \geq 0$ for all $i = 1 , \ldots , n$.  Since positive linear combinations of mutually orthogonal projections are dense in $M_+$, it follows that $\psi - \varphi \in M_+$.\\
+		Now take $x \in M_+$ such that $q x q \neq 0$.\\
+		Then we can find $\alpha > 0$ such that $\spec \left( q x q \right) \cap \left[ \alpha , \infty \right) \neq \emptyset$.\\
+		Then since $\psi - \varphi \geq 0$, we have
+
+		\begin{align*}
+				\left( \psi - \varphi \right) \left( x \right)%
+				&\geq \left( \psi - \varphi \right) \left( \alpha 1_{\left[ \alpha , \infty \right)} \left( x \right) \right)\\
+				&= \alpha \left( \psi - \varphi \right) \left( 1_{\left[ \alpha , \infty \right)} \left( x \right) \right)\\
+				&> 0
+		\end{align*}
+
+		so that $\varphi \left( q x q \right) < \psi \left( q x q \right)$ for all $x \in M_+$ with $q x q \neq 0$.\\
+
+	\item
+		Show that the following conditions are equivalent for a positive linear functional $\varphi \in M^*$ for a von Neumann algebra $M$:
+
+		\begin{enumerate}
+		\item $\varphi$ is $\sigma$-WOT continuous,
+		\item $\varphi$ is \textit{normal}: $x_\lambda \nearrow x$ implies $\varphi \left( x_\lambda \right) \nearrow \varphi \left( x \right)$, and
+		\item $\varphi$ is completely additive.
+		\end{enumerate}
+
+		\proof
+		Let $p \in P \left( M \right)$ be nonzero.\\
+		Then we can find $\xi \notin \ker \left( p \right)$ such that $\varphi \left( p \right) < \left\langle p \xi , \xi \right\rangle$ ($p \xi \neq 0$, and we can scale).  Define $\psi = \left\langle \cdot \xi , \xi \right\rangle$.\\
+		Then by problem 87, there exists a nonzero projection $q \leq p$ such that
+
+		\begin{align*}
+				\varphi \left( q x q \right) < \left\langle x q \xi , q \xi \right\rangle
+		\end{align*}
+
+		for all $x \geq 0$ with $q x q \neq 0$.\\
+		Now we claim that $x \mapsto \varphi \left( x q \right)$ is $\sigma$-WOT continuous.  To see this, suppose $x_\lambda \to x$ $\sigma$-WOT, and hence $x_\lambda \to x$ WOT as well.  Then
+
+		\begin{align*}
+				\left| \varphi \left( x q \right) - \varphi \left( x_\lambda q \right) \right|^2%
+				&= \left| \varphi \left( \left( x - x_\lambda \right) q \right) \right|^2\\
+				&\leq \varphi \left( q \left( x - x_\lambda \right)^* \left( x - x_\lambda \right) q \right) \varphi \left( 1 \right)\\
+				&\leq \left\langle \left( x - x0\lambda \right) q \xi , q \xi \right\rangle \varphi \left( 1 \right)\\
+				&\to 0
+		\end{align*}
+
+		where the first inequality comes form Cauchy-Schwarz for the sesquilinear form $\left( x , y \right) \coloneq \varphi \left( y^* x \right)$, and the second inequality comes from the definition of $q$.  The convergence is exactly the definition of WOT convergence, so we conclude that $\varphi \left( \cdot q \right)$ is $\sigma$-WOT continuous.\\
+		Now take $\left( q_i \right)_{i \in I}$ to be a maximal family of mutually orthogonal projections such that $x \mapsto \varphi \left( x q_i \right)$ is $\sigma$-WOT continuous.\\
+		We claim that $\sum_{i \in I} q_i = 1$.  Take $p = 1 - \sum_{i \in I} q_i$, and suppose $p \neq 0$.  Then the construction above using this $p$ gives us a nonzero $q \leq p$ such that $\varphi \left( \cdot q \right)$ is $\sigma$-WOT continuous, which contradicts maximality.\\
+		Define $\varphi_F \left( x \right) \coloneq \sum_{i \in F} \varphi \left( x q_i \right)$.  Then each $\varphi_F$ is $\sigma$-WOT continuous, and thus each $\varphi_F$ is $\sigma$-WOT continuous, so $\varphi_F \in M_*$.\\
+		It now suffices to show that $\varphi_F \to \varphi$ in norm, so that $\varphi$ is also $\sigma$-WOT continuous, since $M_*$ is norm closed.\\
+		Let $\epsilon > 0$.  Choose $F \subseteq I$ finite such that $\varphi \left( \sum_{i \notin F} q_i \right) < \frac{\epsilon^2}{\left\| \varphi \right\| + 1}$.  Then
+
+		\begin{align*}
+				\left| \varphi \left( x \right) - \varphi_F \left( x \right) \right|^2%
+				&= \left| \varphi \left( x \right) - \sum_{i \in F} \varphi \left( x q_i \right) \right|^2\\
+				&= \left| \varphi \left( \sum_{i \in I} x q_i - \sum_{i \in F} x q_i \right) \right|^2\\
+				&= \left| \varphi \left( x \sum_{i \in F} q_i \right) \right|^2\\
+				&\leq \varphi \left( x x^* \right) \varphi \left( \sum_{i \notin F} q_i \right)\\
+				&\leq \left( \epsilon \left\| x \right\| \right)^2,
+		\end{align*}
+
+		and thus $\varphi_F \to \varphi$ in norm.\\
 \end{enumerate}
 
 \end{document}          
