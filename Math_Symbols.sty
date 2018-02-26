@@ -28,7 +28,6 @@
 \newcommand{\sd}[1]{\hat{\boldsymbol{#1}}}
 \newcommand{\sdf}[1]{\tilde{\boldsymbol{#1}}}
 \newcommand{\bvt}[1]{\tilde{\boldsymbol{#1}}}
-\newcommand{\tens}[1]{\overleftrightarrow{\boldsymbol{#1}}}
 
 
 
@@ -100,28 +99,29 @@
 
 
 %Category names
+\newcommand{\Cat}[1]{\mathrm{\textbf{#1}}}
 
 \let\Vec\relax
-\newcommand{\Alg}{\mathrm{\textbf{Alg}}}
-\newcommand{\Fun}{\mathrm{\textbf{Fun}}}
-\newcommand{\Mod}{\mathrm{\textbf{Mod}}}
-\newcommand{\Hilb}{\mathrm{\textbf{Hilb}}}
-\newcommand{\Ring}{\mathrm{\textbf{Ring}}}
-\newcommand{\Smth}{\mathrm{\textbf{Smth}}}
-\newcommand{\Mon}{\mathrm{\textbf{Mon}}}
-\newcommand{\Set}{\mathrm{\textbf{Set}}}
-\newcommand{\Ab}{\mathrm{\textbf{Ab}}}
-\newcommand{\Vec}{\mathrm{\textbf{Vec}}}
-\newcommand{\Grp}{\mathrm{\textbf{Grp}}}
-\newcommand{\Top}{\mathrm{\textbf{Top}}}
-\newcommand{\hTop}{\mathrm{\textbf{hTop}}}
-\newcommand{\Ch}{\mathrm{\textbf{Ch}}}
-\newcommand{\homCh}{\mathrm{\textbf{homCh}}}
-\newcommand{\GrAbGrp}{\mathrm{\textbf{GrAbGrp}}}
-\newcommand{\CRing}{\mathrm{\textbf{CRing}}}
-\newcommand{\TvNA}{\mathrm{\textbf{TvNA}}}
-\newcommand{\TvNa}{\mathrm{\textbf{TvNa}}}
-\newcommand{\Rep}{\mathrm{\textbf{Rep}}}
+\newcommand{\Alg}{\Cat{Alt}}
+\newcommand{\Fun}{\Cat{Fun}}
+\newcommand{\Mod}{\Cat{Mod}}
+\newcommand{\Hilb}{\Cat{Hilb}}
+\newcommand{\Ring}{\Cat{Ring}}
+\newcommand{\Smth}{\Cat{Smth}}
+\newcommand{\Mon}{\Cat{Mon}}
+\newcommand{\Set}{\Cat{Set}}
+\newcommand{\Ab}{\Cat{Ab}}
+\newcommand{\Vec}{\Cat{Vec}}
+\newcommand{\Grp}{\Cat{Grp}}
+\newcommand{\Top}{\Cat{Top}}
+\newcommand{\hTop}{\Cat{hTop}}
+\newcommand{\Ch}{\Cat{Ch}}
+\newcommand{\homCh}{\Cat{homCh}}
+\newcommand{\GrAbGrp}{\Cat{GrAbGrp}}
+\newcommand{\CRing}{\Cat{CRing}}
+\newcommand{\TvNA}{\Cat{TvNA}}
+\newcommand{\TvNa}{\Cat{TvNa}}
+\newcommand{\Rep}{\Cat{Rep}}
 
 %Category names
 
@@ -275,8 +275,8 @@
 \newcommand{\IN}[2]{\left\langle #1 \middle| #2 \right\rangle}
 \newcommand{\INP}[2]{\left( #1, #2 \right)}
 \newcommand{\INO}[3]{\left\langle #2 \middle| #1 \middle| #3 \right\rangle}
-\newcommand{\ket}[1]{\left| #1 \right\rangle}
-\newcommand{\bra}[1]{\left\langle #1 \right|}
+% \newcommand{\ket}[1]{\left| #1 \right\rangle} % Conflicts with a better way. 
+% \newcommand{\bra}[1]{\left\langle #1 \right|} % Same. 
 \newcommand{\TB}{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert}
 \newcommand{\BT}{\right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}
 %Delimiters
