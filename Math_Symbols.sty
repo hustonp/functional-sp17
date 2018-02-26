@@ -1,0 +1,439 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Math Symbols
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+
+
+\newcommand{\newpar}{
+  \nointerlineskip \vspace{\baselineskip}
+  \hspace{\fill}\rule{0.35\linewidth}{.7pt}\hspace{\fill}
+  \par\nointerlineskip \vspace{\baselineskip}
+}
+
+\newcommand{\und}{\underline}
+\newcommand{\den}{\underline}
+\newcommand{\te}{\text}
+\newcommand{\bd}{\boldsymbol}
+\newcommand{\df}{\boldsymbol}
+\newcommand{\bv}{\boldsymbol}
+\newcommand{\ma}{\mathbb}
+\newcommand{\mb}{\mathbbm}
+\newcommand{\mc}{\mathcal}
+\newcommand{\mf}{\mathfrak}
+\newcommand{\msc}{\mathscr}
+\newcommand{\bvd}[1]{\dot{\boldsymbol{#1}}}
+\newcommand{\bvdd}[1]{\ddot{\boldsymbol{#1}}}
+\newcommand{\bvh}[1]{\hat{\boldsymbol{#1}}}
+\newcommand{\sd}[1]{\hat{\boldsymbol{#1}}}
+\newcommand{\sdf}[1]{\tilde{\boldsymbol{#1}}}
+\newcommand{\bvt}[1]{\tilde{\boldsymbol{#1}}}
+\newcommand{\tens}[1]{\overleftrightarrow{\boldsymbol{#1}}}
+
+
+
+
+%%Stuff I don't understand
+\stackMath
+
+\newcommand\xxrightarrow[2][]{\mathrel{
+  \setbox2=\hbox{\stackon{\scriptstyle#1}{\scriptstyle#2}}
+  \stackunder[0pt]{
+    \xrightarrow{\makebox[\dimexpr\wd2\relax]{$\scriptstyle#2$}}
+  }{
+   \scriptstyle#1\,
+  }
+}}
+
+\newcommand\xxrightharpoonup[2][]{\mathrel{
+  \setbox2=\hbox{\stackon{\scriptstyle#1}{\scriptstyle#2}}
+  \stackunder[0pt]{
+    \xrightharpoonup{\makebox[\dimexpr\wd2\relax]{$\scriptstyle#2$}}
+  }{
+   \scriptstyle#1\,
+  }
+}}
+
+%%/Stuff I don't understand
+
+
+
+
+%%subfactor stuff
+
+\newcommand{\typeone}[1]{type $\mathrm{I}_{#1}$}
+\newcommand{\typetwo}[1]{type $\mathrm{II}_{#1}$}
+\newcommand{\typethree}{type $\mathrm{III}$}
+
+\newcommand{\one}[1]{$\mathrm{I}_{#1}$}
+\newcommand{\two}[1]{$\mathrm{II}_{#1}$}
+\newcommand{\three}{$\mathrm{III}$}
+%%/subfactor stuff
+
+
+
+
+%Greek Letters
+\newcommand{\A}{\alpha}
+\newcommand{\B}{\beta}
+\newcommand{\G}{\gamma}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\de}{\delta}
+\newcommand{\De}{\Delta}
+\newcommand{\ep}{\epsilon}
+\newcommand{\et}{\theta}
+\newcommand{\Et}{\Theta}
+\newcommand{\ka}{\kappa}
+\newcommand{\da}{\lambda}
+\newcommand{\Da}{\Lambda}
+\newcommand{\rf}{\pi}
+\newcommand{\Rf}{\Pi}
+\newcommand{\si}{\sigma}
+\newcommand{\Si}{\Sigma}
+\newcommand{\ed}{\varphi}
+\newcommand{\Ed}{\Phi}
+\newcommand{\ws}{\psi}
+\newcommand{\Ws}{\Psi}
+\newcommand{\om}{\omega}
+\newcommand{\Om}{\Omega}
+%Greek Letters
+
+
+%Category names
+
+\let\Vec\relax
+\newcommand{\Alg}{\mathrm{\textbf{Alg}}}
+\newcommand{\Fun}{\mathrm{\textbf{Fun}}}
+\newcommand{\Mod}{\mathrm{\textbf{Mod}}}
+\newcommand{\Hilb}{\mathrm{\textbf{Hilb}}}
+\newcommand{\Ring}{\mathrm{\textbf{Ring}}}
+\newcommand{\Smth}{\mathrm{\textbf{Smth}}}
+\newcommand{\Mon}{\mathrm{\textbf{Mon}}}
+\newcommand{\Set}{\mathrm{\textbf{Set}}}
+\newcommand{\Ab}{\mathrm{\textbf{Ab}}}
+\newcommand{\Vec}{\mathrm{\textbf{Vec}}}
+\newcommand{\Grp}{\mathrm{\textbf{Grp}}}
+\newcommand{\Top}{\mathrm{\textbf{Top}}}
+\newcommand{\hTop}{\mathrm{\textbf{hTop}}}
+\newcommand{\Ch}{\mathrm{\textbf{Ch}}}
+\newcommand{\homCh}{\mathrm{\textbf{homCh}}}
+\newcommand{\GrAbGrp}{\mathrm{\textbf{GrAbGrp}}}
+\newcommand{\CRing}{\mathrm{\textbf{CRing}}}
+\newcommand{\TvNA}{\mathrm{\textbf{TvNA}}}
+\newcommand{\TvNa}{\mathrm{\textbf{TvNa}}}
+\newcommand{\Rep}{\mathrm{\textbf{Rep}}}
+
+%Category names
+
+
+
+%Typo Fixes
+
+\newcommand{\codt}{\cdot}
+\newcommand{\lodts}{\ldots}
+\newcommand{\ldtos}{\ldots}
+\newcommand{\codts}{\cdots}
+\newcommand{\vodts}{\vdots}
+\newcommand{\tua}{\tau}
+
+%Typo Fixes
+
+
+
+
+
+
+
+
+
+%Handy Symbols
+\newcommand{\blank}{{-}}
+\newcommand{\from}{\leftarrow}
+\newcommand{\nat}[1]{\xRightarrow{#1}}
+\newcommand{\op}{^{\te{op}}}
+\newcommand{\mor}{\xrightarrow}
+\newcommand{\rew}{\otimes}
+\newcommand{\hrew}{\ba{\otimes}}
+\newcommand{\sep}{\,\middle|\,}
+\newcommand{\bijection}{\ar[r, rightharpoondown, shift right] \ar[r, leftarrow, leftharpoonup, shift left]}
+\newcommand{\divisionsign}{\div}
+\let\div\relax
+\newcommand{\levi}{\varepsilon}
+\newcommand{\ndots}[3]{{#2}_{1} #1 {#2}_{2} #1  \ldots #1 {{#2}_{#3}}}
+%\newcommand{\undots}[3]{{#2}^{1} #1 {#2}^{2} #1  \ldots #1 {{#2}^{#3}}}
+\newcommand{\infdots}[2]{{#2}_{1} #1 {#2}_{2} #1 \ldots}
+%\newcommand{\oinfdots}[2]{{#2}_{0} #1 {#2}_{1} #1 \ldots}
+\newcommand{\tg}{\hbar}
+\newcommand{\del}{\partial}
+\newcommand{\nab}{\bv \nabla}
+\newcommand{\ap}{\approx}
+\newcommand{\apr}{\doteq}
+\newcommand{\nor}{\trianglelefteq}
+\newcommand{\mo}{\mu_0}
+\newcommand{\ef}{\epsilon_0}
+\newcommand{\para}{\parallel}
+\newcommand{\kcol}{\fa{1}{4 \rf \ef}}
+\newcommand{\es}{\varnothing}
+\newcommand{\subs}{\subseteq}
+\newcommand{\sups}{\supseteq }
+%\newcommand{\cut}{|}
+\newcommand{\ba}{\overline}
+\newcommand{\uba}{\underline}
+\newcommand{\foral}{\ \ \forall}
+\newcommand{\exist}{\ \ \exists}
+%\newcommand{\ST}{\te{ such that }}
+\newcommand{\tand}{\text{ and }}
+\newcommand{\tfor}{\text{ for }}
+\newcommand{\tas}{\text{ as }}
+\newcommand{\tis}{\text{ is }}
+\newcommand{\tif}{\text{ if }}
+\newcommand{\twhere}{\text{ where }}
+\newcommand{\teven}{\text{even}}
+\newcommand{\todd}{\text{odd}}
+\newcommand{\tin}{\text{ in }}
+\newcommand{\twith}{\text{ with }}
+\newcommand{\nth}{^{\text{th}}}
+\newcommand{\back}{\setminus}
+\newcommand{\symdif}{\mathbin{\Delta}}
+\newcommand{\sequ}[2]{\ER {#1}_{#2} : {#2} \geq 1 \RE} %Real I Sequence macro
+\newcommand{\ti}{\tilde}
+\newcommand{\qtand}{\quad \text{and} \quad}
+\newcommand{\toinfty}[1]{\xxrightarrow[#1 \to \infty]{}}
+\newcommand{\toinftyweak}[1]{\xxrightharpoonup[#1 \to \infty]{}}
+\newcommand{\toinftyweakstar}[1]{\xxrightharpoonup[#1 \to \infty]{*}}
+\newcommand{\onetoinfty}[1]{_{{#1} = 1}^\infty}
+\newcommand{\toweak}{\rightharpoonup}
+\newcommand{\toau}{\xrightarrow{\te{AU}}}
+\newcommand{\tomu}{\xrightarrow{\mu}}
+\newcommand{\tozero}[1]{\xrightarrow{#1 \to 0}}
+\newcommand{\normal}{\unlhd}
+\newcommand{\bnormal}{\unrhd}
+\newcommand{\notnormal}{\centernot{\unlhd}}
+\def\dbar{{\mathchar'26\mkern-12mu d}}
+\newcommand{\inc}{\hookrightarrow}
+\newcommand{\htpy}{\approx}
+\newcommand{\htp}[1]{\underset{{#1}}{\approx}}
+\newcommand{\pathsim}{\underset{{\text{path}}}{\sim}}
+\newcommand{\qeq}{\overset{?}{=}}
+\newcommand{\act}{\curvearrowright}
+\newcommand{\ec}{\eqqcolon}
+\newcommand{\ce}{\coloneqq}
+\newcommand{\restrict}{|}
+\newcommand{\derzero}{\der{}{t} \bigg|_{t = 0}}
+\newcommand{\ubrace}[2]{\smash{\underbrace{#1}_{#2}}\vphantom{#1}}
+\newcommand{\obrace}[2]{\smash{\overbrace{#1}^{#2}}\vphantom{#1}}
+\newcommand{\grad}{\nabla}
+\newcommand{\AI}{\fint}
+\newcommand{\toup}{\nearrow}
+\newcommand{\todown}{\downarrow}
+\newcommand{\quotient}[2]{{\left.\raisebox{.2em}{\ensuremath{#1}}\middle/\raisebox{-.2em}{\ensuremath{#2}}\right.}}
+\renewcommand{\mod}{/}
+\renewcommand{\l}{<}
+\newcommand{\g}{>}
+\let\bmod\relax
+
+
+\newcommand{\bmod}[2]{{\raisebox{-.2em}{$#1$}\left\backslash\raisebox{.2em}{$#2$}\right.}}%backward quotient sign for right cosets
+
+
+\newcommand{\bigmod}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}%big quotient sign
+
+
+\newcommand{\dmod}[3]{{\raisebox{-.1em}{$#1$}\left\backslash\raisebox{.1em}{$#2$}\right/\raisebox{-.1em}{$#3$}}}%inline double quotient for double cosets.
+\newcommand{\doublemod}[3]{{\raisebox{-.2em}{$#1$}\left\backslash\raisebox{.2em}{$#2$}\right/\raisebox{-.2em}{$#3$}}}%displayed double quotient for double cosets.
+%Handy Symbols
+
+%Script "r"
+\def\rs{{\mbox{$\resizebox{.16in}{.08in}{\includegraphics{/home/zach/Dropbox/Public/LaTex/Pictures/Script-r/ScriptR}} \! \! \!$}}}
+\def\brs{{\mbox{$\resizebox{.16in}{.08in}{\includegraphics{/home/zach/Dropbox/Public/LaTex/Pictures/Script-r/BoldR}}\! \! \!$}}}
+\def\rshat{{\mbox{$\hat \brs$}}}
+%Script "r"
+
+%Delimiters
+\newcommand{\E}{\left(}
+\newcommand{\R}{\right)}
+\newcommand{\DF}{\left[}
+\newcommand{\FD}{\right]}
+\newcommand{\ER}{\left\{}
+\newcommand{\RE}{\right\}}
+%\newcommand{\AW}{\left\langle} %Outdated
+%\newcommand{\WA}{\right\rangle} %Outdated
+\newcommand{\ET}{\left\langle}
+\newcommand{\TE}{\right\rangle}
+\newcommand{\MG}{\left|}
+\newcommand{\GM}{\right|}
+\newcommand{\NK}{\left\|}
+\newcommand{\KN}{\right\|}
+\newcommand{\SD}{\left\llbracket}
+\newcommand{\DS}{\right\rrbracket}
+\newcommand{\CL}{\left\lceil}
+\newcommand{\LC}{\right\rceil}
+\newcommand{\FL}{\left\lfloor}
+\newcommand{\LF}{\right\rfloor}
+%\newcommand{\MS}[1]{\left| #1 \right|^2}
+%\newcommand{\magsquare}[1]{\MG #1 \GM^2} %Outdated
+\newcommand{\IN}[2]{\left\langle #1 \middle| #2 \right\rangle}
+\newcommand{\INP}[2]{\left( #1, #2 \right)}
+\newcommand{\INO}[3]{\left\langle #2 \middle| #1 \middle| #3 \right\rangle}
+\newcommand{\ket}[1]{\left| #1 \right\rangle}
+\newcommand{\bra}[1]{\left\langle #1 \right|}
+\newcommand{\TB}{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert}
+\newcommand{\BT}{\right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}
+%Delimiters
+
+%Integrals, Sums, and Products
+\newcommand{\infint}{\int\limits_{-\infty}^{\infty}}
+\newcommand{\I}{\int}
+%\newcommand{\ID}{\iint\limits}
+%\newcommand{\IT}{\iiint\limits}
+%\newcommand{\SF}{\iint \limits_{\mathcal S}}
+%\newcommand{\VF}{\iiint \limits_{\mathcal V}}
+%\newcommand{\spaceint}{\iiint \limits_{\substack{\text{All}\\\text{Space}}}}
+%\newcommand{\SU}{\sum \limits}
+%\newcommand{\PR}{\product \limits}
+%Integrals, Sums, and Products
+
+%Math Functions
+\newcommand{\fa}{\frac}
+\newcommand{\sq}{\sqrt}
+\newcommand{\pd}[3][]{\frac{\partial^{#1} {#2}}{\partial {#3}{}^{#1}}}
+\newcommand{\der}[3][]{\frac{d^{#1} #2}{d {#3}{}^{#1}}}
+\newcommand{\fd}[3][]{\frac{\de^{#1} #2}{\de {#3}{}^{#1}}}
+\newcommand {\concat}{
+  \mathord{
+    \mathchoice
+    {\raisebox{1ex}{\scalebox{.7}{$\frown$}}}
+    {\raisebox{1ex}{\scalebox{.7}{$\frown$}}}
+    {\raisebox{.7ex}{\scalebox{.5}{$\frown$}}}
+    {\raisebox{.7ex}{\scalebox{.5}{$\frown$}}}
+  }
+}
+\newcommand{\pre}[1]{{#1}^{\te{pre}}}
+%Math Modifiers
+
+%MathOperators
+\DeclareMathOperator{\Infl}{Infl}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Borel}{Borel}
+\DeclareMathOperator{\reg}{reg}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\rel}{rel}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\length}{length}
+\let\id\relax
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\ann}{ann}
+\DeclareMathOperator{\Obj}{Obj}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ran}{ran}
+\DeclareMathOperator{\real}{Re}
+\DeclareMathOperator{\imag}{Im}
+\let\Im\relax
+\DeclareMathOperator{\Im}{Im}
+\let\Re\relax
+\DeclareMathOperator{\Re}{Re}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\aut}{Aut} %Outdated
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\chra}{char}
+\DeclareMathOperator{\gal}{Gal}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\inter}{int}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\spa}{Span}
+\DeclareMathOperator{\Lin}{Lin}
+\DeclareMathOperator{\nul}{null}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\cod}{cod}
+\DeclareMathOperator{\epi}{epi}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\Vol}{Vol}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\Vect}{Vect}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\div}{div}
+\DeclareMathOperator{\Lip}{Lip}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\obj}{obj}
+\DeclareMathOperator{\arr}{arr}
+\DeclareMathOperator{\meas}{meas}
+\DeclareMathOperator{\cha}{char}
+\DeclareMathOperator{\stab}{stab}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Free}{Free}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\Area}{Area}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Und}{Und}
+\DeclareMathOperator{\esssupWOOOO}{ess\,sup}
+\newcommand{\esssup}{\esssupWOOOO\limits}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Gr}{Gr}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\orbit}{orbit}
+\DeclareMathOperator{\co}{co}
+\DeclareMathOperator{\conv}{conv}
+\DeclareMathOperator{\Herm}{Herm}
+\DeclareMathOperator{\Inner}{Inner}
+\DeclareMathOperator{\Iso}{Iso}
+\DeclareMathOperator{\BiLin}{BiLin}
+\DeclareMathOperator{\Bilin}{Bilin}
+\DeclareMathOperator{\spec}{sp}
+\DeclareMathOperator{\Ob}{Ob}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\Open}{Open}
+\DeclareMathOperator{\colim}{colim}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\Bal}{Bal}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Com}{Com}
+\DeclareMathOperator{\Bim}{Bim}
+\DeclareMathOperator{\tor}{tor}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Kar}{Kar}
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\ind}{ind}
+\DeclareMathOperator{\Irr}{Irr}
+\DeclareMathOperator{\Conv}{Conv}
+\DeclareMathOperator{\ev}{ev}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Map}{Map}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\FreeMod}{FreeMod}
+\DeclareMathOperator{\ins}{ins}
+\DeclareMathOperator{\pconv}{PConv}
+\DeclareMathOperator{\Lie}{Lie}
+\DeclareMathOperator{\Skew}{Skew}
+\DeclareMathOperator{\Alt}{Alt}
+\DeclareMathOperator{\lub}{lub}
+\DeclareMathOperator{\essrange}{essrange}
+\DeclareMathOperator{\mate}{mate}
+\DeclareMathOperator{\ext}{ext}
+%MathOperators
+
+
+
+
+
+
+
+\makeatother
