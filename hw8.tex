@@ -99,10 +99,13 @@ Functional Analysis 2\\
 
 \begin{enumerate}
 		\setcounter{enumi}{88}
- \item 
+	\item Let $M\subseteq B(H)$ and $N\subseteq B(K)$. 
 		\begin{enumerate}
-			\item 
-			\item 
+			\item For a bounded net of positive operators $x_\lambda$ increasing to a positive operator $x$, we know that convergence in the WOT, SOT, $\sigma$-WOT, and $\sigma$-SOT are all equivalent. If $\Phi$ is $\sigma$-WOT continuous, then in particular, if $x\lambda\to x$ in the $\sigma$-WOT, then $\Phi(x_\lambda)\to\Phi(x)$ in the $\sigma$-WOT as well. On the other hand, suppose that $\Phi:M\to N$ is normal. Let $\psi\in N_*$, the dual of $N$ under the $\sigma$-WOT topology, be positive. Since $\psi$ is $\sigma$-WOT continuous, $\psi$ is normal, so $\psi\Phi$ is normal and positive, and hence $\sigma$-WOT continuous. Since $M_*$ is spanned by positive linear functionals (Corollary 4.3.4 of Jesse Peterson's notes), % HERE expand?
+				this shows that $\psi\Phi$ is continuous for every $\psi\in N_*$. Since the $\sigma$-WOT topology is the weak topology induced by the predual, this is precisely the condition for $\Phi$ to be $\sigma$-WOT continuous. 
+			\item If $\ker(\Phi)=0$, then by problem 72 part 2, we know that $\Phi(M)$ is a von-Neumann subalgebra of $N$. Therefore, it suffices to construct  unital Von-Neumann algebra $*$-homomorphism $C:M\to\coker(\Phi)$, with an injective factorization $\ol{\Phi}:\coker(\Phi)\to N$ so that $\Phi=\ol{\Phi}C$. Since $0\subseteq N$ is $\sigma$-WOT closed and $\Phi$ is $\sigma$-WOT continuous, $\ker(\Phi)$ is $\sigma$-WOT closed. Since $\Phi$ is a ring homomorphism, $\ker(\Phi)$ is a $2$-sided ideal. Therefore, by results proven in class, $\ker(\Phi)$ is of the form $Mz$ for some $z\in P(Z(M))$. Since $z\in Z(M)$, we know that $zH$ and $(1-z)H$ are $M$-invariant subspaces of $H$; if $m-n\in\ker(\Phi)$, then $(m-n)z=m-n$, so $(m-n)(1-z)=0$. Therefore, let $C:M\to M(1-z)$ be the compression map, a $\sigma$-WOT continuous unital $*$-homomorphism for sure. If $C(x)=C(y)$, then $\Phi(x)=\Phi(y)$, so the map $\ol{\Phi}:M(1-z)\to N$ given by $\ol{\Phi}(m(1-z))=\Phi(m)$ is a well-defined homomorphism. By definition, $\ol{\Phi}$ is unital, and since $(1-z)$ is central and self-adjoint, $C$ and $\ol{\Phi}$ are $*$-homomorphisms. But $(m(1-z))(1-z)=m(1-z)$, so $\ol{\Phi}$ is actually a restriction of $\Phi$, and hence still $\sigma$-WOT continuous. 
+
+				For the sake of completeness, we should say why the $\sigma$-WOT topology on $M(1-z)$ is the subspace topology coming from $M$. When constructing the predual, we found that for a von-Neumann algebra $A$, we have $A_*\cong L^1(B(H))/A_\perp$, where $A_\perp$ is precisely those elements $y\in L^1(B(H))$ so that $\tr(ay)=0$ for every $a\in A$. Therefore, the $\sigma$-WOT topology on any $A\subseteq B(H)$ is actually induced by the (usually redundant) family of seminorms $(a\to |\tr(ay)|)_{y\in L^1(B(H))}$, and every von-Neumann algebra $A\subseteq B(H)$ has the induced $\sigma$-WOT topology from $B(H)$. % HERE true? neccesary to say in HW, or obvious by now?
 			\item 
 				\begin{enumerate}
 					\item 
