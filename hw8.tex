@@ -143,9 +143,85 @@ Functional Analysis 2\\
 		\end{enumerate}
 		\newpage
  \item 
+ Let $\Gamma$ be a discrete group, and let $L\Gamma = \set{\lambda_g}'' \subseteq B(\ell^2\Gamma)$.
+ Consider the faithful $\sigma$-WOT continuous tracial state
+ $\tr(x) = \ggen{x\delta_e, \delta_e}$ on $L\Gamma$.
 		\begin{enumerate}
-			\item 
-			\item 
+			\item Show that $u\delta_g = \lambda_g$ uniquely extends to a unitary
+				$u \in B(\ell^2\Gamma, L^2L\Gamma)$ such that for all $x \in L\Gamma$
+				and $\xi \in \ell^2\Gamma$, $L_xu\xi = ux\xi$ where $L_x \in B(L^2L\Gamma)$
+				is left multiplication by $x$, i.e., $L_x(y\Omega) = xy\Omega$.
+				\begin{proof}
+					Since $(\delta_g)_{g \in \Gamma}$ is an orthonormal basis in $\ell^2\Gamma$,
+					in order to show that $u\delta_g = \lambda_g$ extends uniquely to a unitary,
+					it suffices to prove that $(\lambda_g\Omega)_{g \in \Gamma}$ is an
+					orthonormal basis for $L^2L\Gamma$.
+					First, we check that $(\lambda_g\Omega)_{g \in \Gamma}$ is orthonormal:
+					\begin{align*}
+						\ggen{\lambda_g\Omega, \lambda_h\Omega}
+						 & = \tr(\lambda_h^*\lambda_g) \\
+						 & = \ggen{\lambda_g\delta_e, \lambda_h\delta_e} \\
+						 & = \ggen{\delta_g, \delta_h} \\
+						 & = \delta_{g = h}.
+					\end{align*}
+					
+					It remains to show that $\text{span}\set{\lambda_g\Omega : g \in \Gamma}$
+					is dense in $L^2L\Gamma$.
+					By construction, $\set{x\Omega : x \in L\Gamma}$ is dense in $L^2L\Gamma$,
+					so it suffices to prove that $\text{span}\set{\lambda_g\Omega : g \in \Gamma}$
+					is dense in $\set{x\Omega : x \in L\Gamma}$ is dense in $L^2L\Gamma$.
+					
+					Let $x \in L\Gamma$.
+					By the definition of $L\Gamma$, there is a net $(x_i)_{i \in I}$
+					so that $x_i \in \text{span}\set{\lambda_g : g \in \Gamma}$
+					for each $i \in I$ and $x_i \to x$ SOT.
+					By the Kaplansky density theorem,
+					we may assume $\|x_i\| \le \|x\|$ for all $i \in I$.
+					Then since multiplication is jointly continuous on bounded sets,
+					$(x - x_i)^*(x - x_i) \to 0$ SOT.
+					Therefore, $(x - x_i)^*(x - x_i) \to 0$ WOT and hence $\sigma$-WOT,
+					since everything is bounded.
+					Now since $\tr$ is $\sigma$-WOT continuous,
+					$$\|x\Omega - x_i\Omega\|_2^2 = \tr((x - x_i)^*(x - x_i)) \to \tr(0) = 0.$$
+					That is, $x_i\Omega \to x\Omega$ in $L^2L\Gamma$.
+					This completes the proof that $(\lambda_g)_{g \in \Gamma}$
+					is an orthonormal basis for $L^2L\Gamma$.
+					
+					Now for all $g, h \in \Gamma$,
+					\begin{align*}
+						L_{\lambda_g}u\delta_h
+						& = L_{\lambda_g}\lambda_h\Omega \\
+						& = \lambda_g\lambda_h\Omega \\
+						& = \lambda_{gh}\Omega \\
+						& = u\delta_{gh} \\
+						& = u\lambda_g\delta_h.
+					\end{align*}
+					Hence by linearity and continuity of $u$ and each $\lambda_g$, we have
+					$L_xu\xi = ux\xi$ for all $\xi \in \ell^2\Gamma$ and all
+					$x \in \text{span}\set{\lambda_g : g \in \Gamma}$.
+					It remains to check that if $x_i \to x$ SOT, then $L_{x_i} \to L_x$ SOT.
+					By the Kaplansky density theorem, we may assume $\|x_i\| \le \|x\|$ for all $i$.
+					Then for $y \in L\Gamma$, we have $\|x_iy\| \le \|xy\|$ and $x_iy \to xy$ SOT.
+					Hence, by the computation in the previous paragraph,
+					$L_{x_i}(y\Omega) \to L_x(y\Omega)$ in $L^2L\Gamma$.
+					Since this holds for all $y \in L\Gamma$, we have $L_{x_i} \to L_x$ SOT
+					as desired.
+				\end{proof}
+			\item Deduce from Problem 91 that $L\Gamma' = R\Gamma$.
+				\begin{proof}
+					By problem 91, it suffices to show $J L\Gamma J = R\Gamma$.
+					For $g, h \in \Gamma$, we have
+					\begin{align*}
+						(J L_x J) (\lambda_h\Omega)
+						 & = J L_x (\lambda_{h^{-1}}\Omega) \\
+						 & = J (x\lambda_{h^{-1}} \Omega) \\
+						 & = \lambda_hx^* \Omega \\
+						 & = R_{x^*}(\lambda_h \Omega).
+					\end{align*}
+					Since $(\lambda_h\Omega)_{h \in \Gamma}$ is an orthonormal basis for
+					$L^2L\Gamma$, we have $JL_xJ = R_{x^*}$.
+					Therefore, $J L\Gamma J = R\Gamma$.
+				\end{proof}
 		\end{enumerate}
 \end{enumerate}
 
