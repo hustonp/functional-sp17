@@ -99,33 +99,57 @@ Functional Analysis 2\\
 
 \begin{enumerate}
 		\setcounter{enumi}{88}
-	\item Let $M\subseteq B(H)$ and $N\subseteq B(K)$. 
+	\item Let $\Phi : M \to N$ be a unital $*$-homomorphism between von Neumann algebras.
 		\begin{enumerate}
-			\item For a bounded net of positive operators $x_\lambda$ increasing to a positive operator $x$, we know that convergence in the WOT, SOT, $\sigma$-WOT, and $\sigma$-SOT are all equivalent. Suppose $\Phi$ is $\sigma$-WOT continuous. In particular, if $x_\lambda\nearrow x$, then $x\lambda\to x$ in the $\sigma$-WOT, so $\Phi(x_\lambda)\to\Phi(x)$ in the $\sigma$-WOT as well. On the other hand, suppose that $\Phi:M\to N$ is normal. Let $\psi\in N_*$, the dual of $N$ under the $\sigma$-WOT topology, be positive. Since $\psi$ is $\sigma$-WOT continuous, $\psi$ is normal, so $\psi\Phi$ is normal and positive, and hence $\sigma$-WOT continuous. Since $M_*$ is spanned by positive linear functionals (Corollary 4.3.4 of Jesse Peterson's notes), % HERE expand?
-				this shows that $\psi\Phi$ is continuous for every $\psi\in N_*$. Since the $\sigma$-WOT topology is the weak topology induced by the predual, this is precisely the condition for $\Phi$ to be $\sigma$-WOT continuous. 
-			\item If $\ker(\Phi)=0$, then by problem 72 part 2, we know that $\Phi(M)$ is a von-Neumann subalgebra of $N$. Therefore, it suffices to construct  unital Von-Neumann algebra $*$-homomorphism $C:M\to\coker(\Phi)$, with an injective factorization $\ol{\Phi}:\coker(\Phi)\to N$ so that $\Phi=\ol{\Phi}C$. Since $0\subseteq N$ is $\sigma$-WOT closed and $\Phi$ is $\sigma$-WOT continuous, $\ker(\Phi)$ is $\sigma$-WOT closed. Since $\Phi$ is a ring homomorphism, $\ker(\Phi)$ is a $2$-sided ideal. By results proven in class, $\ker(\Phi)$ is of the form $Mz$ for some $z\in P(Z(M))$. Since $z\in Z(M)$, we know that $zH$ and $(1-z)H$ are $M$-invariant subspaces of $H$; if $m-n\in\ker(\Phi)$, then $(m-n)z=m-n$, so $(m-n)(1-z)=0$. Let $C:M\to M(1-z)$ be the compression map, a $\sigma$-WOT continuous unital $*$-homomorphism for sure. If $C(x)=C(y)$, then $\Phi(x)=\Phi(y)$, so the map $\ol{\Phi}:M(1-z)\to N$ given by $\ol{\Phi}(m(1-z))=\Phi(m)$ is a well-defined homomorphism. By definition, $\ol{\Phi}$ is unital, and since $(1-z)$ is central and self-adjoint, $C$ and $\ol{\Phi}$ are $*$-homomorphisms. But $(m(1-z))(1-z)=m(1-z)$, so $\ol{\Phi}$ is actually a restriction of $\Phi$, and hence still $\sigma$-WOT continuous. 
+			\item Prove that the following two conditions are equivalent:
+			\begin{enumerate}
+				\item	$\Phi$ is \emph{normal}: $x_\lambda \nearrow x$
+				implies $\Phi(x_\lambda) \nearrow \Phi(x)$.
+				\item	$\Phi$ is $\sigma$-WOT continuous.
+			\end{enumerate}
+			\begin{proof}
+			For a bounded net of positive operators $x_\lambda$ increasing to a positive operator $x$, we know that convergence in the WOT, SOT, $\sigma$-WOT, and $\sigma$-SOT are all equivalent. Suppose $\Phi$ is $\sigma$-WOT continuous. If $x_\lambda\nearrow x$, then in particular $x_\lambda\to x$ $\sigma$-WOT, so $\Phi(x_\lambda)\to\Phi(x)$ $\sigma$-WOT as well.
+			
+			On the other hand, suppose that $\Phi:M\to N$ is normal. Let $\psi\in N_*$, the dual of $N$ under the $\sigma$-WOT topology, be positive. Since $\psi$ is $\sigma$-WOT continuous, $\psi$ is normal, so $\psi \circ \Phi$ is normal and positive, and hence $\sigma$-WOT continuous by problem 88. Since $M_*$ is spanned by positive linear functionals (Corollary 4.3.4 of Jesse Peterson's notes), % HERE expand?
+				this shows that $\psi \circ \Phi$ is $\sigma$-WOT continuous for every $\psi\in N_*$. Since the $\sigma$-WOT topology is the weak topology induced by the predual, this is precisely the condition for $\Phi$ to be $\sigma$-WOT continuous. 
+				\end{proof}
+			\item Prove that if $\Phi$ is normal, then $\Phi(M) \subseteq N$ is a von Neumann subalgebra.
+			\begin{proof} If $\ker(\Phi)=0$, then by problem 72 part 2, we know that $\Phi(M)$ is a von-Neumann subalgebra of $N$. Therefore, it suffices to construct  unital Von-Neumann algebra $*$-homomorphism $C:M\to\coker(\Phi)$, with an injective factorization $\ol{\Phi}:\coker(\Phi)\to N$ so that $\Phi=\ol{\Phi}C$. Since $\set{0}\subseteq N$ is $\sigma$-WOT closed and $\Phi$ is $\sigma$-WOT continuous, $\ker(\Phi)$ is $\sigma$-WOT closed. Since $\Phi$ is a ring homomorphism, $\ker(\Phi)$ is a $2$-sided ideal. By results proven in class, $\ker(\Phi)$ is of the form $Mz$ for some $z\in P(Z(M))$. Since $z\in Z(M)$, we know that $zH$ and $(1-z)H$ are $M$-invariant subspaces of $H$; if $m-n\in\ker(\Phi)$, then $(m-n)z=m-n$, so $(m-n)(1-z)=0$. Let $C:M\to M(1-z)$ be the compression map, a $\sigma$-WOT continuous unital $*$-homomorphism for sure. If $C(x)=C(y)$, then $\Phi(x)=\Phi(y)$, so the map $\ol{\Phi}:M(1-z)\to N$ given by $\ol{\Phi}(m(1-z))=\Phi(m)$ is a well-defined homomorphism. By definition, $\ol{\Phi}$ is unital, and since $(1-z)$ is central and self-adjoint, $C$ and $\ol{\Phi}$ are $*$-homomorphisms. But $(m(1-z))(1-z)=m(1-z)$, so $\ol{\Phi}$ is actually a restriction of $\Phi$, and hence still $\sigma$-WOT continuous. 
 
 				For the sake of completeness, we should say why the $\sigma$-WOT topology on $M(1-z)$ is the subspace topology coming from $M$. When constructing the predual, we found that for a von-Neumann algebra $A$, we have $A_*\cong L^1(B(H))/A_\perp$, where $A_\perp$ is precisely those elements $y\in L^1(B(H))$ so that $\tr(ay)=0$ for every $a\in A$. Therefore, the $\sigma$-WOT topology on any $A\subseteq B(H)$ is actually induced by the (usually redundant) family of seminorms ${(a\to |\tr(ay)|)_{y\in L^1(B(H))}}$, and every von-Neumann algebra $A\subseteq B(H)$ has the induced $\sigma$-WOT topology from $B(H)$. % HERE true? neccesary to say in HW, or obvious by now?
-			\item 
+				\end{proof}
+			\item Let $\varphi$ be a normal state on a von Neumann algebra $M$,
+			and let $(H_\varphi, \Omega_\varphi, \pi_\varphi)$ be the cyclic GNS representation
+			of $M$ associated to $\varphi$, i.e. $H_\varphi = L^2(M, \varphi)$,
+			$\Omega_\varphi \in H_\varphi$ is the image of $1 \in M$ in $H_\varphi$,
+			and $\pi_\varphi(x)m\Omega_\varphi = xm\Omega_\varphi$ for all $x, m \in M$.
 				\begin{enumerate}
-					\item Suppose $x\lambda\nearrow x$ in $M$. In particular, $x\lambda\to x$ in the $\sigma$-WOT. For every $z,y\in M$, we have 
+					\item Show that $\pi_\varphi$ is normal.
+					\begin{proof}
+					Suppose $x_\lambda\to x$ $\sigma$-WOT. For every $z,y\in M$, we have 
 						\begin{align*}
 							\ggen{\pi_\varphi(x-x_\lambda)y\Omega,z\Omega} &= \varphi(z^*(x-x_\lambda)y)\\
-							\intertext{Since multiplication is $\sigma$-WOT continuous in each coordinate and $\varphi$ is $\sigma$-WOT continuous, }
+							\intertext{Since multiplication is $\sigma$-WOT continuous in each coordinate and $\varphi$ is $\sigma$-WOT continuous by (1), }
 							\ggen{\pi_\varphi(x-x_\lambda)y\Omega,z\Omega}&\to 0
 						\end{align*}
-							Since $z$ and $y$ were arbitrary and vectors of the form $y\Omega$ are norm-dense in $H_\varphi$, this shows that $\pi_\varphi(x_\lambda)\to\pi_\varphi(x)$ in the WOT. 
-							Since $\pi_\varphi(x_\lambda)$ is bounded by $\norm{\pi_\varphi(x)}$, and the $\sigma$-WOT and WOT agree on bounded sets, $\pi_\varphi(x_\lambda)\to\pi_\varphi(x)$ in the $\sigma$-WOT as well. % Because of the nature of $\nearrow$, this line is superfluous I guess. 
+							Since $z$ and $y$ were arbitrary and vectors of the form $y\Omega$ are norm-dense in $H_\varphi$, this shows that $\pi_\varphi(x_\lambda)\to\pi_\varphi(x)$ WOT. 
+							Since $\pi_\varphi(x_\lambda)$ is bounded by $\norm{\pi_\varphi(x)}$, and the $\sigma$-WOT and WOT agree on bounded sets, $\pi_\varphi(x_\lambda)\to\pi_\varphi(x)$ $\sigma$-WOT as well. % Because of the nature of $\nearrow$, this line is superfluous I guess. 
 							By part (1), this is enough to show that $\pi_\varphi$ is normal. 
-						\item If $\varphi$ is faithful, then so is $\pi_\varphi$, because for $x\neq y$, we have 
+							\end{proof}
+						\item Deduce that if $\varphi$ is faithful,
+						then $M \cong \pi_\varphi(M) \subseteq B(H_\varphi)$
+						is a von Neumann algebra acting on $H_\varphi$.
+						\begin{proof}
+						If $\varphi$ is faithful, then for $x\neq y$, we have 
 							\begin{align*}
-								\norm{\pi_\varphi(x-y)} &\ge \pn{\pi_\varphi(x-y)\Omega}{\varphi}\\
-								&= \varphi((x-y)(x-y)*)\\
+								\norm{\pi_\varphi(x-y)}^2 &\ge \pn{\pi_\varphi(x-y)\Omega}{\varphi}^2\\
+								&= \varphi((x-y)^*(x-y))\\
+								& > 0,
 							 %	\intertext{Because $M$ is a $C^*$-algebra, $\norm{(x-y)(x-y)^*}=\norm{x-y}^2>0$, so } % maybe clearer, but really dumb
-								\intertext{If $x-y\neq 0$, then $(x-y)(x-y)^*\neq 0$, since $\norm{(x-y)^*\eta}=\ggen{\eta,(x-y)(x-y)^*\eta}$. Therefore, } % really give a reason for this?
-								\norm{\pi_\varphi(x-y)} &> 0
-							\end{align*}
-							showing that $\pi_\varphi(x)\neq\pi_\varphi(y)$. 
+							 \end{align*}
+							since $(x - y)^*(x- y)$ is a nonzero positive operator.
+							Hence, $\pi_\varphi$ is a faithful representation and the claim follows from (2).
+							\end{proof}
 				\end{enumerate}
 		\end{enumerate}
 		\setcounter{enumi}{90}
