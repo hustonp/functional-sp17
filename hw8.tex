@@ -157,16 +157,9 @@ Functional Analysis 2\\
  \item 
 		\begin{enumerate}
 		\item It's easy to see that $J$ is a conjugate linear isometry: 
-
                   \begin{align*}
                     J \E \E \lambda a + b \R \Omega \R%
-                    &= \E \lambda a + b \R^* \Omega\\
-                    &= \ba \lambda a \Omega + b \Omega.
-                  \end{align*}
-
-                  and
-
-                  \begin{align*}
+                    &= \E \lambda a + b \R^* \Omega = \ba \lambda a \Omega + b \Omega, \quad \text{ and }\\
                     \NK J \E a \Omega \R \KN%
                     &= \NK a^* \Omega \KN\\
                     &= \ET a^* \Omega , a^* \Omega \TE\\
@@ -175,11 +168,9 @@ Functional Analysis 2\\
                     &= \ET a \Omega , a \Omega \TE\\
                     &= \NK a \Omega \KN.
                   \end{align*}
-
                   Lastly, $J \DF M \Omega \FD = M \Omega$, because $M$ is *-closed.  Since $M \Omega$ is dense in $L^2 M$ by construction, we have that $J \DF M \Omega \FD$ is dense in $L^2 M$ as well.
                 \item From the previous part, we know that $J$ extends uniquely to a conjugate linear isometry $L^2 M \to L^2 M$.\\
                   Now fix $\xi \in L^2 M$, and take a sequence $\E a_n \R_{n \in \mathbb N}$ in $M$ such that $a_n \Omega \to \xi$.  Then 
-
                   \begin{align*}
                     J^2 \xi%
                     &= J^2 \E \lim_{n \to \infty} a_n \Omega \R\\
@@ -188,10 +179,8 @@ Functional Analysis 2\\
                     &= \lim_{n \to \infty} a_n \Omega\\
                     &= \xi
                   \end{align*}
-
                   so that $J^2 = 1$ on $L^2 M$.\\
                   Next, for $\xi = b \Omega , \eta = a \Omega \in M \Omega$, we have
-
                   \begin{align*}
                     \ET J \eta , J \xi \TE%
                     &= \ET a^* \Omega , b^* \Omega\TE\\
@@ -200,22 +189,15 @@ Functional Analysis 2\\
                     &= \ET b \Omega , a \Omega \TE\\
                     &= \ET \xi , \eta \TE.
                   \end{align*}
-
                   Now if $\xi , \eta \in L^2 M$, we can write $\xi = \lim_{n \to \infty} a_n \Omega$ and $\eta = \lim_{n \to \infty} b_n \Omega$ for some sequences $\E a_n \R , \E b_n \R \in M$.\\
                   Then for each $k \in \mathbb N$,
-
                   \begin{align*}
                     \ET J \eta , J a_k \Omega \TE%
                     &= \ET J \lim_{n \to \infty} b_n \Omega , J a_k \Omega \TE\\
                     &= \lim_{n \to \infty} \ET J \E b_n \Omega \R , J \E a_k \Omega \R \TE\\
                     &= \lim_{n \to \infty} \ET a_k \Omega , b_n \Omega \TE\\
                     &= \ET a_k \Omega , \lim_{n \to \infty} b_n \Omega \TE\\
-                    &= \ET a_k \Omega , \eta \TE.
-                  \end{align*}
-
-                  Then
-
-                  \begin{align*}
+                    &= \ET a_k \Omega , \eta \TE.  \quad \text{Then}\\
                     \ET J \eta , J \xi \TE%
                     &= \ET J \eta , J \lim_{k \to \infty} a_k \Omega \TE\\
                     &= \lim_{k \to \infty} \ET J \eta , J a_k \Omega \TE\\
@@ -223,34 +205,21 @@ Functional Analysis 2\\
                     &= \ET \lim_{k \to \infty} a_k \Omega , \eta \TE\\
                     &= \ET \xi , \eta \TE.
                   \end{align*}
-
-                  Thus $\ET J \eta , J \xi \TE = \ET \xi , \eta \TE$ for all $\xi , \eta \in L^2 M$.\\
-                  
-
+                  Thus $\ET J \eta , J \xi \TE = \ET \xi , \eta \TE$ for all $\xi , \eta \in L^2 M$.
 		\item For $a , b \in M$, we have
-
                   \begin{align*}
                     J a^* J b \Omega%
-                    &= J a^* b^* \Omega\\
-                    &= \E b a \R \Omega,
-                  \end{align*}
-
-                  and thus for $a , b , m \in M$,
-
-                  \begin{align*}
+                    &= J a^* b^* \Omega = \E b a \R \Omega, \quad \text{ and thus for $m \in M$,}\\
                     \E J m J b \R \E a \xi \R%
                     &= \E J m J \R \E b a \R \xi\\
                     &= b a m^* \xi\\
                     &= b \E J m J a \R \xi\\
                     &= b \E J m J \R \E a \xi \R.
                   \end{align*}
-
                   Thus $J m J$ commutes with $b$ on $M \Omega$, and since $M \Omega$ is dense in $L^2 M$, it follows that $J m J$ commutes with $b$ on $L^2 M$.\\
                   Since $b \in M$ was arbitrary, it follows that $J m J \in M'$, so $J M J \subs M'$.
                   
-
 	        \item For $a , b , c \in M$, we compute
-
                   \begin{align*}
                     \ET J a^* J b \Omega , c \Omega \TE%
                     &= \ET b a \Omega , c \Omega \TE\\
@@ -260,12 +229,8 @@ Functional Analysis 2\\
                     &= \ET b \Omega , c a^* \Omega \TE\\
                     &= \ET b \Omega , J a J c \Omega \TE.
                   \end{align*}
-
                   Thus $\E J a J \R^* = J a^* J$, again because $M \Omega$ is dense in $L^2 M$.
-
-
 		\item For all $a \in M$ and $y \in M'$, we have
-
                   \begin{align*}
                     \ET J y \Omega , a \Omega \TE%
                     &= \ET J y \Omega , J a^* \Omega \TE\\
@@ -274,20 +239,11 @@ Functional Analysis 2\\
                     &= \ET a^* y \Omega , \Omega \TE\\
                     &= \ET y^* \Omega , a \Omega \TE.
                   \end{align*}
-
                   Since $\ET J y \Omega , a \Omega \TE = \ET y^* \Omega , a \Omega \TE$ for all $a \in M$, and $M \Omega$ is dense in $L^2 M$, we have $J y \Omega = y^* \Omega$ for all $y \in M'$.
-
 		\item Take $x , y , z \in M'$.  Then
-
                   \begin{align*}
                     J x^* J y \Omega%
-                    &= J x^* y^* \Omega\\
-                    &= y x \Omega,
-                  \end{align*}
-
-                  and thus
-
-                  \begin{align*}
+                    &= J x^* y^* \Omega = y x \Omega, \quad \text{ and thus }\\
                     \ET J x^* J y \Omega , z \Omega \TE%
                     &= \ET y x \Omega , z \Omega \TE\\
                     &= \tr \E z^* y x \R\\
@@ -296,11 +252,8 @@ Functional Analysis 2\\
                     &= \ET y \Omega , z x^* \Omega \TE\\
                     &= \ET y \Omega , J x J z \Omega \TE,
                   \end{align*}
-
-                  so that $\E J x J \R^* = J x^* J$.\\
-
+                  so that $\E J x J \R^* = J x^* J$.
                 \item For $a , b \in M$ and $x , y \in M'$, we have
-
                   \begin{align*}
                     \ET x J y J a \Omega , b \Omega \TE%
                     &= \ET a \Omega , J y^* J x^* b \Omega \TE\\
@@ -312,12 +265,7 @@ Functional Analysis 2\\
                   \end{align*}
 
 
-
-
-
-
-                \item Thus from the above we see that each $x \in M'$ commutes with each $J y J \in J M' J$, so that $M' \subs \E J M' J \R' = J M J$, so that $M' = J M J$.\\
-
+                \item Thus from the above we see that each $x \in M'$ commutes with each $J y J \in J M' J$, so that $M' \subs \E J M' J \R' = J M J$, so that $M' = J M J$. \hfill $\qed$
 
 
 		\end{enumerate}
