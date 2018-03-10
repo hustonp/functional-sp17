@@ -121,8 +121,21 @@ Functional Analysis 2\\
 					&= 0
 				\end{align*}
 				Therefore, $\xi$ and $x\ast\eta$ agree pointwise, and hence $\xi=x\ast\eta$, as desired. 
-			\item 
-			\item 
+			\item Since $L\Gamma=R\Gamma'=\set{\rho_g:g\in\Gamma}'''=\set{\rho_g:g\in\Gamma}'$ as a subalgebra of $B(\ell^2\Gamma)$, it suffices to check that for every $x\in\ell\Gamma$ and $g\in\Gamma$, we have $x\rho_g=\rho_gx$. Let $x\in\ell\Gamma$ and $g\in\Gamma$ be given. Since $x$ and $\rho_g$ are norm-continuous, it suffices to check that for every $h\in\Gamma$, $x\ast\rho_g(\delta_h)=\rho_g(x\ast\delta_h)$. Let $h\in\Gamma$ be given. Then we can compute that 
+				\begin{align*}
+					x\ast\rho_g(\delta_h) &= x\ast\delta_{hg^{-1}}\\
+					\intertext{ and for every $k\in\Gamma$, }
+					(x\ast\rho_g(\delta_h))_k &= (x\ast\delta_{hg^{-1}})_k\\
+					&= x_{kgh^{-1}}\\
+					&= (x\ast\delta_h)_{kg}\\
+					&= \rho_g(x\ast\delta_h)_k
+					\intertext{ showing that }
+					x\ast\rho_g(\delta_h) &= \rho_g(x\ast\delta_h)\\
+					\intertext{ showing that }
+					T_x\rho_g &= \rho_gT_x
+				\end{align*}
+				as desired. 
+			\item It is clear that $x\to T_x$ is a unital homomorphism. We saw when solving part (1) that $(T_x)^*=T_{x^*}$. Because $\ggen{T_x\delta_e,\delta_g}=x_g$, an inverse homomorphism is given by $T\to(\ggen{T\delta_e,\delta_g})_{g\in\Gamma}$; that the range of this homorphism is contained in $\ell\Gamma$ was proven in class. 
 		\end{enumerate}
 		\setcounter{enumi}{94}
 	\item 
