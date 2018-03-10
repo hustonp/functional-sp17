@@ -101,8 +101,26 @@ Functional Analysis 2\\
 		\setcounter{enumi}{92}
 	\item 
 		\begin{enumerate}
-			\item 
-			\item 
+			\item Since convolution is $\C$-linear and associative, $\ell\Gamma$ is a $\C$-module, closed under convolution. We know that $\delta_e\in\ell^2\Gamma$ is a unit for the convolution, with $\delta_e\ast f$ defined for every $f:\Gamma\to\C$. Therefore, $\delta_e\in\ell\Gamma$, making $\ell\Gamma$ a unital algebra. We will use part (2) to prove that $\ell\Gamma$ is $*$-closed. (Contrary to the hint, we will not use $*$-closure of $\ell\Gamma$ in proving (2)). 
+
+				Let $x\in\ell\Gamma$. First, notice that the definition of $x^*$ by $(x^*)_g=\ol{x_{g^{-1}}}$ is the only possible definition so that $(T_x)^*=T_{x^*}$, because if $T_x$ has an adjoint at all, we must have $\ggen{T_x\delta_e,\delta_e}=\ggen{\delta_e,T_x^*\delta_e}$. Moreover, for every $x,\eta\in\ell^2\Gamma$, by {H\"{o}lder's} inequality, $x\ast\eta\in\ell^\infty\Gamma$ is well-defined. The only issue is checking that $\pn{x\ast\eta}{2}<\infty$. Suppose $\xi\in(\ell^2\Gamma)_1$. % with $\pn{x^*\ast\xi}{2}>\pn{x}^2$. % Weird thought, but leaving as hint because I doubt the whole argument. 
+				It would be circular to assert that $\ggen{x\ast x^*\ast\xi,\xi}=\pn{x^*\ast\xi}{2}$, but we can approximate. For $F\subseteq\Gamma$ finite, define $\eta_F=\sum_{g\in F}(x^*\ast\xi)_g\delta_g$. Then we have $\ggen{\eta_F,x^*\ast\xi}=\pn{\eta_F}{2}^2\uparrow\pn{x^*\ast\xi}{2}^2$. Since each $\eta_F$ is in $\ell^1\Gamma$, we can apply Fubini's theorem, obtaining 
+				\begin{align*}
+					\ggen{\eta_F,x^*\ast\xi} &= \ggen{x\ast\eta_F,\xi}\\
+					&\le \norm{T_x}\cdot\norm{\eta_F}{2}\norm{\xi}{2}\\
+					&\le \norm{T_x}\cdot\pn{\xi}{2}^2\\
+					\intertext{Taking limits, }
+					\pn{x^*\ast\xi}{2}^2 &\le \norm{T_x}\cdot\pn{\xi}{2}^2
+				\end{align*}
+				so $\norm{x^*}\le\norm{x}$ as usual. In particular, $\pn{x^*\ast\xi}{2}<\infty$, showing that $x^*\in\ell\Gamma$. 
+			\item Suppose $x\in\ell\Gamma$. To show that $x\in B(\ell^2\Gamma)$, we apply the closed graph theorem. It suffices to check that if $\eta_n\to\eta$ in $\ell^2\Gamma$ and $x\ast\eta_n\to\xi$ in $\ell^2\Gamma$, then $x\ast\eta=\xi$. The following calculation is basic, but in the interest of full disclosure, I read it in Jesse's notes while looking for something else. If $g\in\Gamma$, then by continuity of the inner product, 
+				\begin{align*}
+					|(\xi-x\ast\eta)_g| &= \lim_{n\to\infty}|(x\ast\eta_n-x\ast\eta)_g|\\
+					&\le \lim_{n\to\infty}\pn{(x\ast(\eta_n-\eta))_g}{\infty}\\
+					&\le \lim_{n\to\infty}\pn{x}{2}\pn{\eta_n-\eta}{2}\\
+					&= 0
+				\end{align*}
+				Therefore, $\xi$ and $x\ast\eta$ agree pointwise, and hence $\xi=x\ast\eta$, as desired. 
 			\item 
 			\item 
 		\end{enumerate}
