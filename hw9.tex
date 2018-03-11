@@ -141,9 +141,13 @@ Functional Analysis 2\\
 	\item 
 	\item 
 		\begin{enumerate}
-			\item 
-			\item 
-			\item 
+			\item A well-known result in group theory says that any subgroup of a free group is free. Therefore, it suffices to prove that the conjugacy classes of the members of a generating set for $\mathbb{F}_2$ are infinite. We know that in $S_n$, we have $(1,2,\ldots n)^{k}(1,2)(1,2\ldots n)^{-k}=(k+1,k+2)$. Therefore, for every $n\in\N$, there exist groups $G$ with elements $a,b\in G$ such that $a^kba^{-k}$ are distinct for every $k\le n$. If $\mathbb{F}_2=\ggen{x,y}$, then $|\set{x^kyx^{-k}|}$ is either infinite, or a non-zero integer multiple of every natural number. Therefore, $y$ has infinite conjugacy class, as desired. 
+				
+				Since $\mathbb{F}_2$ is an ICC group, by a result proved in class, $L\mathbb{F}_2$ is a $\factor{2}_1$ factor. 
+			\item Let $\Phi:\Gamma\to\Lambda$ be an isomorphism of groups. Then there is an isometric isomorphism $\Phi_*:\ell^2\Lambda\to\ell^2\Gamma$, defined by $\Phi_*(\eta)_g=\eta_{\Phi(g)}$ for $g\in\Gamma$, with $(\Phi^{-1})_*=(\Phi_*)^{-1}$. Pick $x\in\ell\Lambda$. For every $\eta\in\ell^2\Gamma$, we have $\Phi_*(x)\ast\eta=\Phi_*(x\ast\Phi_*^{-1}(\eta))$, so $\Phi_*(x)\in\ell\Gamma$. Therefore, we may consider $\Phi_*(X)$ as an algebra isomorphism $\ell\Lambda\to\ell\Gamma$. Since $\Phi$ preserves the group identity, $\Phi_*(\delta_e)=\delta_e$, showing that $\Phi_*$ is unital, and since $\Phi$ preserves inverses and is linear, $\Phi_*$ is a $*$-homomorphism. By problem 93 part (4), we can turn $\Phi_*$ into a unital $*$-isomorphism $L\Lambda\to L\Gamma$. 
+
+				In particular, $\sigma$ is an automorphism of $\mathbb{F}_2$, so $\sigma$ defines an automorphism $\alpha$ of $L\mathbb{F}_2$. 
+			\item We will show that $\alpha$ is free, which implies that $\alpha$ is outer. Happily for us, $\sigma=\sigma^{-1}$. Therefore, we can simply write, for $x\in\ell\mathbb{F}_2$, that $\alpha(x)_g=x_{\sigma(g)}$. Now for every $g,h\in\mathbb{F}_2$ and $x\in\ell\mathbb{F}_2$, we have $(x\ast\delta_g)_h=x_{h^{-1}g}$ and $(\delta_g\ast x)_h=x_{g^{-1}h}$. Suppose $x\in\ell\mathbb{F}_2$ such that for every $g\in\mathbb{F}_2$, we have $x\ast\alpha(\delta_{g^{-1}})=\delta_{g^{-1}}\ast x$; then for every $g,h\in\mathbb{F}_2$, we get $x_{h\sigma(g)}=x_{gh}$. In particular, if $\mathbb{F}_2\cong\ggen{a,b}$ is a presentation, then for every $w\in\mathbb{F}_2$, we have $x_w=x_{a(a^{-1}w)}=x_{a^{-1}wb}$. Of course, counting up $a$'s and $b$'s via the homormohpism $\ggen{a,b}\to\ggen{a,b|[a,b]}\cong\Z^2$ shows that for any $w$, the set $\set{a^{-n}wb^n:n\in\Z}$ is infinite. This shows that $x$ is constant on infinite subsets which cover $\mathbb{F}_2$. Since $x\in\ell^2\mathbb{F}_2$, this means that $x=0$. By definition, we have shown that $\alpha$ is free. 
 		\end{enumerate}
 	\item 
 \end{enumerate}
