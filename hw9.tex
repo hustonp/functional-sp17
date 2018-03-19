@@ -138,7 +138,19 @@ Functional Analysis 2\\
 			\item It is clear that $x\to T_x$ is a unital homomorphism. We saw when solving part (1) that $(T_x)^*=T_{x^*}$. Because $\ggen{T_x\delta_e,\delta_g}=x_g$, an inverse homomorphism is given by $T\to(\ggen{T\delta_e,\delta_g})_{g\in\Gamma}$; that the range of this homorphism is contained in $\ell\Gamma$ was proven in class. 
 		\end{enumerate}
 		\setcounter{enumi}{94}
-	\item 
+	      \item Let $M$ and $N$ be von Neumann algebras, and $\Ed : M \to N$ a *-isomorphism.\\
+                First, $\Ed$ sends positive operators to positive operators, since $\Ed \E x^* x \R = \Ed \E x \R^* \Ed \E x \R$.\\
+                Let $\E x_\lambda \R$ be an increasing net of positive operators in $M$, with least upper bound $x$.\\
+                Lastly, if $y \in N$ with $\Ed \E x \R \geq y \geq \Ed \E x_\lambda \R$ for all $\lambda$, then $x \geq \Ed^{-1} \E y \R \geq x_\lambda$ for all $\lambda$, and thus $y = x$, because $x$ is the least upper bound for $\E x_\lambda \R$.\\
+                Thus $\Ed \E x_\lambda \R \toup \Ed \E x \R$, so $\Ed$ is normal.\\
+                $\qed$
+
+
+
+
+
+
+
 	\item 
 		\begin{enumerate}
 			\item A well-known result in group theory says that any subgroup of a free group is free. Therefore, it suffices to prove that the conjugacy classes of the members of a generating set for $\mathbb{F}_2$ are infinite. We know that in $S_n$, we have $(1,2,\ldots n)^{k}(1,2)(1,2\ldots n)^{-k}=(k+1,k+2)$. Therefore, for every $n\in\N$, there exist groups $G$ with elements $a,b\in G$ such that $a^kba^{-k}$ are distinct for every $k\le n$. If $\mathbb{F}_2=\ggen{x,y}$, then $|\set{x^kyx^{-k}|}$ is either infinite, or a non-zero integer multiple of every natural number. Therefore, $y$ has infinite conjugacy class, as desired. 
@@ -149,7 +161,57 @@ Functional Analysis 2\\
 				In particular, $\sigma$ is an automorphism of $\mathbb{F}_2$, so $\sigma$ defines an automorphism $\alpha$ of $L\mathbb{F}_2$. 
 			\item We will show that $\alpha$ is free, which implies that $\alpha$ is outer. Happily for us, $\sigma=\sigma^{-1}$. Therefore, we can simply write, for $x\in\ell\mathbb{F}_2$, that $\alpha(x)_g=x_{\sigma(g)}$. Now for every $g,h\in\mathbb{F}_2$ and $x\in\ell\mathbb{F}_2$, we have $(x\ast\delta_g)_h=x_{h^{-1}g}$ and $(\delta_g\ast x)_h=x_{g^{-1}h}$. Suppose $x\in\ell\mathbb{F}_2$ such that for every $g\in\mathbb{F}_2$, we have $x\ast\alpha(\delta_{g^{-1}})=\delta_{g^{-1}}\ast x$; then for every $g,h\in\mathbb{F}_2$, we get $x_{h\sigma(g)}=x_{gh}$. In particular, if $\mathbb{F}_2\cong\ggen{a,b}$ is a presentation, then for every $w\in\mathbb{F}_2$, we have $x_w=x_{a(a^{-1}w)}=x_{a^{-1}wb}$. Of course, counting up $a$'s and $b$'s via the homormohpism $\ggen{a,b}\to\ggen{a,b|[a,b]}\cong\Z^2$ shows that for any $w$, the set $\set{a^{-n}wb^n:n\in\Z}$ is infinite. This shows that $x$ is constant on infinite subsets which cover $\mathbb{F}_2$. Since $x\in\ell^2\mathbb{F}_2$, this means that $x=0$. By definition, we have shown that $\alpha$ is free. 
 		\end{enumerate}
-	\item 
+
+
+
+
+
+
+
+
+
+
+
+              \item Let $\ma Z$ act on $L^\infty \E S^1 \R$ via irrational rotation, i.e., let $T : \ma T \to \ma T$ be given by $T \E x \R = x + \A$ for some $\A \in \ma R \back \ma Q$, and define the action by $n \mapsto \blank \circ T^n$.\\
+                First we show that the action is ergodic.  Let $S \subs \ma T$ be measurable and invariant under $T$.\\
+                Fix $\ep > 0$.  Since $C \E \ma T \R$ is dense in $L^1 \E \ma T \R$, we can find $f \in C \E \ma T \R$ such that
+
+                \begin{align*}
+                  \NK f - \mb 1_S \KN_1 < \fa{\ep}{2}.
+                \end{align*}
+
+                Then since $S$ is $T$ invariant, we also have that for each $n \in \ma Z$,
+
+                \begin{align*}
+                  \NK f \circ T^n - \mb 1_S \KN_1 < \fa{\ep}{2}.
+                \end{align*}
+
+                Thus for each $n \in \ma Z$, $\NK f \circ T^n - f \KN_1 < \ep$.\\
+                But since $x + n \A$ is dense in $\ma T$, it follows that for each $t \in \ma T$, $\NK f \E x + t \R - f \E x \R \KN_1 < \ep$, bceause $f$ is continuous.\\
+                We claim that $f$ is constant: ($\tau_x$ is translation by $x$):
+
+                \begin{align*}
+                  \NK f - \I f \circ \tau_x \E t \R dt \KN_1%
+                  &= \I \MG f - \I f \circ \E x + t \R dt \GM dx\\
+                  &\leq \MG \I \I f \E x \R - f \E x + t \R dt dx \GM\\
+                  &= \MG \I \I f \E x \R - f \E x + t \R dx dt \GM , \quad \te{ by Fubini}\\
+                  &= \I \NK f - f \circ \tau_x \KN_1 dt\\
+                  &= \NK f - f \circ \tau_x \KN_1\\
+                  &\leq \ep.
+                \end{align*}
+
+                Thus $f$ is equal a.e. to it's average value, and thus is constant.  It follows that $\mu \E S \R = 0$ or $\mu \E S \R = 1$, so the action is ergodic.\\
+
+
+                Now we show that the action is free.\\
+                
+
+
+
+
+
+
+
 \end{enumerate}
 
 \end{document}          
