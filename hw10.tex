@@ -101,13 +101,51 @@ Functional Analysis 2\\
 		\setcounter{enumi}{99}
 	\item
 		\begin{enumerate}
-			\item 
-			\item 
-			\item 
+			\item First, notice that the inclusion $\iota:N\to M$ is an isometry with respect to the trace-norm: If $a,b\in N$, then 
+				\begin{align*}
+					\ggen{a,b}_N &= \tr(b^*a)\\
+					&= \tr(\iota(b)^*\iota(a))\\
+					&= \ggen{a,b}_M
+				\end{align*}
+				Therefore, $\iota$ extends to an isometry $N\to L^2(M,\tr)$. Since $\iota$ is an isometry, $\iota$ extends continuously to the trace-norm closure of $N$, which is $L^2(N,\tr)$. Being an isometry, $\iota:L^2(N,\tr)\to L^2(M,\tr)$ must still be an inclusion. 
+			\item Being an orthogonal projection, $e_N$ is norm-decreasing, and therefore continuous, with a continuous adjoint $e_N^*$. As for any projection onto a closed Hilbert subspace, we have $e_N^*=\iota$, and so $e_N^*e_N$ is the orthogonal projection onto $\iota(L^2(N,\tr))$, while $e_Ne_N^*=1_{L^2(N,\tr)}$. 
+
+				Suppose $a,b\in N$, and let $\Omega_N$ be the image of $1_N$ in $L^2(N,\tr)$. Then we have 
+				\begin{align*}
+						JaJe_N^*b\Omega_N &= JaJb\Omega_N\\
+						&= ba^*\Omega_N\\
+						&= e_N^*ba^*\Omega_N\\
+						&= e_N^*JaJb\Omega_N
+				\end{align*}
+				Since multiplication by a member of $n$ is continuous in one component (by Cauchy-Schwarz for the trace) and $e_N^*$ is norm-continuous, we can replace $b\Omega_N$ with any member of $L^2(N,\tr)$, so $e_N^*$ commutes with the right-action of $N$. 
+				% The same holds for the right-action of members of $M$, and so by taking % unneeded!
+				Taking 
+				adjoints, $e_N$ also commutes with the right action: for $a\in N$, $\eta\in L^2(M,\tr)$, and $\xi\in L^2(N,\tr)$, 
+				\begin{align*}
+					\ggen{JaJe_N\eta,\xi} &= \ggen{\eta,e_N^*Ja^*J\xi}\\
+					&= \ggen{\eta,Ja^*Je_N^*\xi}\\
+					&= \ggen{e_NJaJ\eta,\xi}
+				\end{align*}
+
+				Clearly, the left action of a member of $M$ and the right action of a member of $N$ on $L^2(M,\tr)$ commute. Combining these three facts, for every $x\in M$, $e_Nxe_N^*$ commutes with the right action of $N$ on $L^2(N,\tr)$. By problem 91 part 8, we have $e_Nxe_N^*\in(JNJ)'=N$, where commutant is relative to $B(L^2(N,\tr))$. 
+			\item Pick $x\in M$. 
+				% Write $x^*=z+w$ where $z\in L^2(N,\tr)$ and $w\in L^2(N,\tr)^\perp\subseteq L^2(M,\tr)$. 
+				% Then $e_Nx^*=e_Nz=z$. 
+				Then, for any $y\in N$, we have 
+				\begin{align*}
+					\tr(E(x)y)_N &= \ggen{e_Nx^*e_N^*\Omega_N,y\Omega_N}_N\\
+					&= \ggen{x^*e_N^*\Omega_N,e_N^*y\Omega_N}_M\\
+					&= \ggen{x^*\Omega_M,y\Omega_M}_M\\
+					&= \tr(xy)_M
+				\end{align*}
+				
+				A Hilbert space is in weak duality with itself, so for any Hilbert space $H$, an element $\eta\in H$ is uniquely determined by a choice of $(\ggen{\eta,\xi})_{\xi\in H}$, provided such an $\eta$ exists. In particular, this holds for $\eta=E(x)$. 
 		\end{enumerate}
-	\item
+	\item 
 		\begin{enumerate}
-			\item 
+			\item First, notice that $E$ preserves positivity: Suppose $x\in M$ is positive. Then for any $\eta\in L^2(N,\tr)$, we have 
+				\[\ggen{E(x)\eta,\eta}=\ggen{xe_N^*\eta,e_N^*\eta}\ge0\]
+				Now 
 			\item 
 			\item 
 			\item 
