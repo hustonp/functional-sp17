@@ -88,7 +88,7 @@
 
 \pagestyle{fancy}	
 \fancyhf{} % Reset headers and footers
-\lhead{Ethan Ackelsberg, Zachery Dell, Peter Huston\\
+\lhead{Zachery Dell, Peter Huston, Samuel Mossing\\
 Functional Analysis 2\\
 \today}
 \setlength{\headheight}{60pt}
@@ -145,9 +145,21 @@ Functional Analysis 2\\
 		\begin{enumerate}
 			\item First, notice that $E$ preserves positivity: Suppose $x\in M$ is positive. Then for any $\eta\in L^2(N,\tr)$, we have 
 				\[\ggen{E(x)\eta,\eta}=\ggen{xe_N^*\eta,e_N^*\eta}\ge0\]
-				Now 
-			\item 
-			\item 
+				Expanding on the last argument, the sesquilinear form induced by $E(x)$ is a restriction of the sesquilinear form induced by $x$: for $\eta,\xi\in L^2(N,\tr)$, we have 
+				\begin{align*}
+					\ggen{E(x)\eta,\xi}_N &= \ggen{xe_N^*\eta,e_N^*\xi}_M\\
+					&= \ggen{x\eta,\xi}_M\\
+				\end{align*}
+				Therefore, if $x_\lambda\nearrow x$, then $E(x_\lambda)$ is still an increasing sequence of positive operators bounded by $E(x)$, and $E(x_\lambda)\nearrow E(x)$ weakly, and hence $\sigma$-WOT. By definition, $E$ is normal. 
+			\item By the previous remark about sesquilinear forms, $E(1_M)=1_N$. Let $y,z,w\in N$ and $x\in M$ be given; then by part (3) of 100, 
+				\begin{align*}
+					\tr((yE(x)z)w)_N &= \tr(E(x)zwy)_N\\
+					&= \tr(xzwy)_M\\
+					&= \tr(yxzw)_M\\
+					&= \tr(E(yxz)w)_N
+				\end{align*}
+				and by uniqueness, $E(yxz)=\tr(yE(x)z)$. 
+			\item This follows from the remark about sesquilinear forms. 
 			\item 
 			\item 
 			\item 
