@@ -101,8 +101,13 @@ Functional Analysis 2\\
 	\item
 		\begin{enumerate}
 			\item First, recall that any Banach space is weak-$*$ dense in its double dual. In particular, $\ell^1\Gamma$ is weak-$*$ dense in $(\ell^\infty\Gamma)^*$. Let $\phi\in(\ell^\infty\Gamma)$ be a positive operator, and pick some $\phi_\lambda\in\ell^1\Gamma$ with $\phi_\lambda\to\phi$ in the weak-$*$ topology. As in class, for $\psi\in\ell^1\Gamma$, let $|\psi|$ be defined by $|\psi|(g)=|\psi(g)|$, and notice that $|\psi|$ is still in $\ell^1$. Therefore, we may replace each $\phi_\lambda$ with $|\phi_\lambda|$, showing that $\phi$ is the weak-* limit of positive members of $\ell^1\Gamma$. Finally, suppose that $\phi$ is a state, i.e. $\phi(M_1)=1$. Define $\psi_\lambda$ by $\psi_\lambda=\frac{|\phi_\lambda|}{|\phi_\lambda(1)|}$. Since $\phi_\lambda(1)\to\phi(1)=1$ already, by passing to a subnet, we may assume that $|\phi_\lambda(1)|\to 1$, so that $\psi_\lambda\to\phi$ as well. Since $\ell^1\Gamma$ is a \csa, this implies that each $\psi_\lambda$ is a state, so we are done. 
-			\item 
-			\item 
+			\item The product weak topology on $\oplus_{g\in F}\ell^1\Gamma$ is induced by the usual action of $\oplus_{g\in F}\ell^1\Gamma$ on $\oplus_{g\in F}\ell^\infty\Gamma$; similarly, since $F$ is finite, all norms on the direct sum consistent with the original are equivalent, so we may as well take the norm $\norm{\oplus_{g\in F}x_g}=\max_{g\in F}\pn{x_g}{1}$. In particular, the norm on $\ell^\infty\Gamma$ is equivalent to the operator norm from $\ell^1\Gamma$, so this norm is equivalent to the operator norm from $(\oplus_{g\in F}\ell^\infty\Gamma)^*$. 
+				
+				To see that $K$ is convex, notice that $\text{Prob}(\Gamma)$ is convex, and recall that the weak closure of a convex set is convex. Since $K$ is weakly closed and the norm on $\ell^\infty$ is the operator norm from $\ell^1$, $K$ is also norm closed. 
+				
+			\item Let $m$ be a left-$\Gamma$ invariant state on $l^\infty\Gamma$. Let $F\subseteq\Gamma$ finite be given. Let $(\mu_\lambda)$ be a net in $\text{Prob}(\Gamma)$ converging to $m$ in the weak-$*$ toplogy. The action of each $g\in F$ on $(\ell^\infty\Gamma)^*$ is weak-$*$ continuous, so $\oplus_{g\in F}g\mu_\lambda-\mu_\lambda\to\oplus_{g\in F}gm-m$ weak-$*$. However, since $m$ is left-$\Gamma$ invariant, $gm-m=0$ for each $g\in F$, so $\oplus_{g\in F}g\mu_\lambda\to 0$ weak-$*$, and hence weakly, since $0\in\ell^1\Gamma$. Since $K$ is weakly closed and each $\oplus_{g\in F}g\mu_\lambda-\lambda\in K$, we have $0\in K$. 
+				
+				Since $K$ is convex, $K$ is in fact the norm closure of $\set{\oplus_{g\in F}g\mu-\mu:\mu\in\text{Prob}(\Gamma)}$, so there is a sequence $\mu\in\text{Prob}(\Gamma)$ with $\max_{g\in F}\pn{g\mu-\mu}{1}<\epsilon$, i.e. $\Gamma$ has a left-invariant mean. 
 		\end{enumerate}
 	\item
 		\begin{enumerate}
