@@ -127,12 +127,81 @@ Functional Analysis 2\\
                     =& \I_a^b dr\\
                     =& b - a
                   \end{align*}
-			\item 
-			\item 
-			\item 
-			\item 
-			\item 
-			\item 
+
+		\item We have
+
+                  \begin{align*}
+                    \NK h \cdot \mu - \mu \KN_{\ell^1 \Gamma}%
+                    &= \sum_{g \in \Gamma} \MG \E h \cdot \mu \R \E g \R - \mu \E g \R \GM\\
+                    &= \sum_{g \in \Gamma} \MG \mu \E h^{-1} g \R - \mu \E g \R \GM\\
+                    &= \sum_{g \in \Gamma} \I_0^1 \MG \chi_{\E r , 1 \FD} \E \mu \E h^{-1} g \R \R - \chi_{\E r , 1 \FD} \E \mu \E g \R \R \GM dr, \quad \te{ by part (1)}\\
+                    &= \I_0^1 \sum_{g \in \Gamma} \MG \chi_{\E r , 1 \FD} \E \mu \E h^{-1} g \R \R - \chi_{\E r , 1 \FD} \E \mu \E g \R \R \GM dr, \quad \te{ by part (1)}, \quad \te{ by Tonelli's theorem}\\
+                  \end{align*}
+		\item
+
+                  \begin{align*}
+                    h E \E \mu , r \R%
+                    &= \ER h g \mid g \in \Gamma, \mu \E g \R > r \RE\\
+                    &= \ER k \in \Gamma \mid \mu \E h^{-1} k \R > r \RE\\
+                    &= \ER g \in \Gamma \mid \E h \cdot \mu \R \E g \R > r \RE.
+                  \end{align*}
+
+		\item
+
+                  \begin{align*}
+                    \I_0^1 \MG E \E \mu , r \R \GM dr%
+                    &= \I_0^1 \sum_{g \in \Gamma} \chi_{\E 0 , \mu \E g \R \FD} dr\\
+                    &= \sum_{g \in \Gamma} \I_0^1 \chi_{\E 0 , \mu \E g \R \FD} dr, \te{by Tonelli}\\
+                    &= \sum_{g \in \Gamma} \mu \E g \R\\
+                    &= 1
+                  \end{align*}
+
+		\item We know that $g \in \Gamma$ is in $h E \E \mu , r \R \symdif E \E \mu , r \R$ if and only if $\mu \E h^{-1} g \R \leq r < \mu \E g \R$ or $\mu \E g \R \leq r < \mu \E h^{-1} g \R$.\\
+                  This is equivalent to $\MG \chi_{\E r , 1 \FD} \E \mu \E h^{-1} g \R \R - \chi_{\E r , 1 \FD} \E \mu \E g \R \R \GM = 1$, so we have
+
+                  \begin{align*}
+                    \MG h E \E \mu , R \R \symdif E \E \mu , r \R \GM = \sum_{g \in \Gamma} \MG \chi_{\E r , 1 \FD} \E \mu \E h^{-1} g \R \R - \chi_{\E r , 1 \FD} \E \mu \E g \R \R \GM
+                  \end{align*}
+
+		\item We have
+
+                  \begin{align*}
+                    \I_0^1 \sum_{h \in F} \MG h E \E \mu , r \R \symdif E \E \mu , r \R \GM dr%
+                    &= \sum_{h \in F} \I_0^1 \MG h E \E \mu , r \R \symdif E \E \mu , r \R \GM dr\\
+                    &= \sum_{h \in F} \I_0^1 \sum_{g \in \Gamma} \MG \chi_{\E r , 1 \FD} \E \mu \E h^{-1} g \R \R - \chi_{\E r , 1 \FD} \E \mu \E g \R \R \GM dr, \quad \te{ by (5)}\\
+                    &= \sum_{h \in F} \NK h \cdot \mu - \mu \KN_{\ell^1 \Gamma}, \quad \te{ by (2)}\\
+                    &< \ep \\
+                    &= \ep \I_0^1 \MG E \E \mu , r \R \GM dr, \quad \te{ by (4)}.
+                  \end{align*}
+
+                  Thus there exists $r \in \DF 0 , 1 \FD$ such that
+
+                  \begin{align*}
+                    \sum_{h \in F} \MG h E \E \mu , r \R \symdif E \E \mu , r \R \GM dr < \ep \MG E \E \mu , r \R \GM.
+                  \end{align*}
+
+                  and in particular for each $h \in F$ we have
+
+                  \begin{align*}
+                    \MG h E \E \mu , r \R \symdif E \E \mu , r \R \GM dr < \ep \MG E \E \mu , r \R \GM.
+                  \end{align*}
+
+		\item Now take $F_n$ to be a sequence of finite subsets increasing to $\Gamma$, and $\ep_n \coloneqq \frac{1}{n}$.\\
+                  Then there exist $\mu_n \in \mathrm{Prob} \E \Gamma \R$ and $r_n \in \DF 0 , 1 \FD$ such that
+
+                  \begin{align*}
+                    \MG h E \E \mu_n , r_n \R \symdif E \E \mu_n , r_n \R \GM < \frac{1}{n} \MG E \E \mu_n , r_n \R \GM,
+                  \end{align*}
+
+                  so that
+
+                  \begin{align*}
+                    \lim_{n \to \infty} \frac{\MG h E \E \mu_n , r_n \R \symdif E \E \mu_n , r_n \R \GM}{\MG E \E \mu_n , r_n \R \GM} = 0.
+                  \end{align*}
+
+                  Thus $\E E \E \mu_n ,r_n \R \R_{n \in \mathbb N}$ is a Folner sequence for $\Gamma$.
+
+                  
 		\end{enumerate}
 	\item
 		\begin{enumerate}
