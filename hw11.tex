@@ -257,7 +257,7 @@ Functional Analysis 2\\
 					\begin{displaymath}
 						\xymatrix{
 							\mathscr{U} \ar@{-->} [rd]^-{\widetilde{f}} \\
-							\N \ar[r]_-f \ar[u]^-\iota & X
+							\N \ar[r]_-f \ar@{^{(}->}[u]^-\iota & X
 						}
 					\end{displaymath}
 					Let $X$ be a compact Hausdorff space, and let $f : \N \to X$ be any function.
@@ -268,18 +268,26 @@ Functional Analysis 2\\
 					It remains to show that $\widetilde{f}$ is continuous.
 					Let $U \subseteq X$ be open.
 					If $f^{-1}(U) = \es$, there is nothing to show.
-					Since $X$ is a compact Hausdorff space, we may find an open set
-					$V \subseteq X$ such that $\overline{V} \subseteq U$
+					Suppose $f^{-1}(U) \ne \es$.
+					Since $X$ is a compact Hausdorff space, it is normal.
+					Therefore, we may find an open set $V \subseteq X$
+					(a neighborhood of a given point in $U \cap f(\N)$)
+					such that $\overline{V} \subseteq U$
 					and $f^{-1}(V) \ne \es$.
-					%add some details here: every open set is a union of compact subsets
 					Let $\omega \in \widetilde{f^{-1}(V)}$.
 					Then $f^{-1}(X \setminus \overline{V}) \notin \omega$,
 					so $\widetilde{f}(\omega) = \lim_{n \to \omega}{f(n)} \in \overline{V} \subseteq U$.
 					Thus, $\widetilde{f^{-1}(V)}$ is a nonempty open subset of $\mathscr{U}$
 					such that $\widetilde{f}(\widetilde{f^{-1}(V)}) \subseteq U$,
 					so $\widetilde{f}$ is continuous.
-					Uniqueness of $f$ follows from the density of $\N$ in $\mathscr{U}$.
+					Uniqueness of $f$ follows from the density of $\N$
+					in the Hausdorff space $\mathscr{U}$.
 				\end{proof}
+				
+				Note: To see the connection with the $C^*$-algebra construction from last semester,
+				we could also realize $\widehat{\ell^{\infty}}$ as the collection of
+				ultralimits $\lim_{n \to \omega}$ for $\omega \in \mathscr{U}$.
+				Linearity of these limits is shown in (5), and they are multiplicative for the same reason.
 			\item Let $\omega$ be an ultrafilter on $\N$.
 				Let $X$ be a compact Hausdorff space and $f : \N \to X$.
 				We say $x = \lim_{n \to \omega}{f(n)}$ if for every open neighborhood $U$
@@ -353,7 +361,46 @@ Functional Analysis 2\\
 				Prove that $m$ is a left $\Gamma$-invariant finitely additive probability measure
 				on $\Gamma$, i.e. $\Gamma$ is amenable.
 				\begin{proof}
+					Clearly $m(\Gamma) = 1$.
+					Let $A, B \subseteq \Gamma$ be disjoint.
+					Then since $m_n$ is additive for each $n \in \N$,
+					\begin{align*}
+						m(A \cup B) & = \lim_{n \to \omega}
+						{\left( m_n(A \cap \Gamma_n) + m_n(B \cap \Gamma_n) \right)}
+					\end{align*}
+					Thus, in order to show that $m$ is finitely additive,
+					it suffices to show that $\lim_{n \to \omega}$ is additive.
 					
+					Suppose $x = \lim_{n \to \omega}{x_n}$ and $y = \lim_{n \to \omega}{y_n}$
+					for some sequences $(x_n)_{n \in \N}$ and $(y_n)_{n \in \N}$ in $[0,1]$.
+					Let $U$ be a neighborhood of $x + y$.
+					Since addition is jointly continuous, we may find neighborhoods $V$ of $x$
+					and $W$ of $y$ such that $V + W \subseteq U$.
+					By assumption, $\{n : x_n \in V\} \in \omega$ and $\{n : y_n \in W\} \in \omega$.
+					Hence,
+					\begin{align*}
+						\{n : x_n + y_n \in U\} \supseteq \{n : x_n \in V, y_n \in W\}
+						 = \{n : x_n \in V\} \cap \{n : y_n \in W\} \in \omega.
+					\end{align*}
+					Therefore, $\lim_{n \to \omega}{x_n + y_n} = x + y$ as desired.
+					
+					It remains to show that $m$ is left $\Gamma$-invariant.
+					Let $g \in \Gamma$.
+					Then there is an $N \in \N$ such that $g \in \Gamma_n$ for all $n \ge N$.
+					Since $\omega$ is free, $\{n \ge N\} \in \omega$.
+					Let $A \subseteq \Gamma$, and let $U$ be a neighborhood of $m(A)$.
+					Then we have
+					\begin{align*}
+						\{n : m_n((gA) \cap \Gamma_n) \in U\}
+						 & = \{n : m_n(g(A \cap g^{-1}\Gamma_n)) \in U\} \\
+						 & = \{n : m_n(A \cap g^{-1}\Gamma_n) \in U\} \\
+						 & \supseteq \{n \ge N : m_n(A \cap \Gamma_n) \in U\} \\
+						 & = \{n \ge N\} \cap \{n : m_n(A \cap \Gamma_n) \in U\}.
+					\end{align*}
+					Since $m(A) = \lim_{n \to \omega}{m_n(A \cap \Gamma_n)}$,
+					both of these sets in the final line are elements of $\omega$,
+					so their intersection is also in $\omega$.
+					Hence, $m(gA) = \lim_{n \to \omega}{m_n((gA) \cap \Gamma_n)} = m(A)$.
 				\end{proof}
 		\end{enumerate}
 \end{enumerate}
