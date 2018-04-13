@@ -52,7 +52,7 @@
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Q}{\mathbb{Q}}
-\newcommand{\textns}{\otimes}
+\newcommand{\tens}{\otimes}
 \newcommand{\rar}[2][]{\overset{#2}{\underset{#1}{\longrightarrow}}}
 
 \DeclareMathOperator{\img}{img}
@@ -104,13 +104,17 @@ Functional Analysis 2\\
 			\item 
 			\item 
 		\end{enumerate}
-	\item
+	\item 
+
+		Now, we explain why the tensor product of positive matrices valued in a von Neumann algebra is positive. Let $M\subseteq B(H)$ be a von Neumann algebra. We have already established an inclusion $M_n(B(H))\to B(H^n)$, such that if $A,B\in M_n(B(H))$, then the Kronecker tensor product of matrices $A\tens B$ defines the same operator as the operator tensor product $A\tens B$. The operator tensor product is $(A\tens I)(I\tens B)$, so it suffices to prove that the product of two commuting positive elements of a von Neumann algebra is positive. I assume we learned this last semester, so I looked up some of the details on Stack Exchange and in Analysis Now. 
+		
+		Let $A,B\in M$ be commuting positive operators. The product of commuting normal elements is normal, so it suffices to show that $\spec(AB)\subseteq\mathbb{R}$. We claim that $\Spec(AB)\subseteq\Spec(A)\Spec(B)$. If we let $N=\set{A,B}''$, then $N$ is a commuting von Neumann algebra, so by taking the Gelfand transform, $\Spec_N(B)\subseteq\Spec_N(A)\Spec_N(B)$. Now $\Spec_M\subseteq\Spec_N$, since $M\supseteq N$. However, $\Spec_N(A)=\Spec_M(A)$, because if $A-\lambda I$ is invertible in $A$, then by the continuous functional calculus, the inverse commutes with $A$ and $B$, and is therefore in $N$; similarly for $B$. Therefore, $\Spec_M(AB)\subseteq\Spec_N(AB)\subseteq\Spec_M(A)\Spec_M(B)\subseteq\mathbb{R}$. 
 	% \item
 	% 	\begin{enumerate}
 	% 		\item 
 	% 		\item 
 	% 	\end{enumerate}
-		\setcounter{eumi}{111}
+		\setcounter{enumi}{111}
 	\item
 		\begin{enumerate}
 			\item 
