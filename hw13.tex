@@ -104,7 +104,33 @@ Functional Analysis 2\\
 			\item 
 			\item 
 		\end{enumerate}
-	\item
+	\item	Suppose $\Gamma$ is a countable discrete group,
+		and suppose $\varphi : L\Gamma \to L\Gamma$ is a normal completely positive map.
+		Prove that $f : \Gamma \to \C$ given by $f(g) := \tr_{L\Gamma}(\varphi(\lambda_g)\lambda_g^*)$
+		is a positive definite function.
+		\begin{proof}
+			Let $n \in \N$ and $g_1, \dots, g_n \in \Gamma$.
+			Let $A \in M_n(\C)$ be the matrix with entries $a_{ij} = f(g_i^{-1}g_j)$.
+			We want to show $A \ge 0$.
+			Note that since $\tr$ is tracial, we can rewrite the entries as follows:
+			\begin{align*}
+				a_{ij} & = \tr_{L\Gamma}(\varphi(\lambda_{g_i^{-1}g_j})\lambda_{g_i^{-1}g_j}^*) \\
+				 & = \tr_{L\Gamma}(\varphi(\lambda_{g_i}^* \lambda_{g_j})
+				 \lambda_{g_j}^*\lambda_{g_i}) \\
+				 & = \tr_{L\Gamma}(\lambda_{g_i}\varphi(\lambda_{g_i}^* \lambda_{g_j})
+				 \lambda_{g_j}^*). \\
+			\intertext{Let $x \in \C^n$. Then}
+				\ggen{Ax, x} & = \sum_{i,j=1}^n{\overline{x}_i a_{ij} x_j} \\
+				 & = \sum_{i,j=1}^n{\overline{x}_i \tr_{L\Gamma}(\lambda_{g_i}
+				 \varphi(\lambda_{g_i}^* \lambda_{g_j})\lambda_{g_j}^*) x_j} \\
+				 & = \tr_{L\Gamma}\left( \sum_{i,j=1}^n{\overline{x}_i \lambda_{g_i}
+				 \varphi(\lambda_{g_i}^* \lambda_{g_j})\lambda_{g_j}^* x_j} \right) \\
+				 & = \tr_{L\Gamma}\left( \sum_{i,j=1}^n{
+				 \left( \overline{x}_i x_j \right)
+				\left( \lambda_{g_i} \lambda_{g_j}^* \right)
+				\varphi(\lambda_{g_i}^* \lambda_{g_j})} \right)
+			\end{align*}
+		\end{proof}
 	\item
 		\begin{enumerate}
 			\item 
