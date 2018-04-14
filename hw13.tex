@@ -41,6 +41,8 @@
 
 \newcommand{\ol}[1]{\overline{#1}}
 
+\newcommand{\eps}{\varepsilon}
+
 \renewcommand{\mod}{\text{ mod }}
 
 \renewcommand{\O}{\operatorname{O}} % Bound otherwise
@@ -120,13 +122,13 @@ Functional Analysis 2\\
 				 & = \tr_{L\Gamma}(\lambda_{g_i}\varphi(\lambda_{g_i}^* \lambda_{g_j})
 				 \lambda_{g_j}^*). \\
 			\intertext{Let $x \in \C^n$. Then}
-				\ggen{Ax, x} & = \sum_{i,j=1}^n{\overline{x}_i a_{ij} x_j} \\
-				 & = \sum_{i,j=1}^n{\overline{x}_i \tr_{L\Gamma}(\lambda_{g_i}
+				\ggen{Ax, x} & = \sum_{i,j=1}^n{\ol{x}_i a_{ij} x_j} \\
+				 & = \sum_{i,j=1}^n{\ol{x}_i \tr_{L\Gamma}(\lambda_{g_i}
 				 \varphi(\lambda_{g_i}^* \lambda_{g_j})\lambda_{g_j}^*) x_j} \\
-				 & = \tr_{L\Gamma}\left( \sum_{i,j=1}^n{\overline{x}_i \lambda_{g_i}
+				 & = \tr_{L\Gamma}\left( \sum_{i,j=1}^n{\ol{x}_i \lambda_{g_i}
 				 \varphi(\lambda_{g_i}^* \lambda_{g_j})\lambda_{g_j}^* x_j} \right) \\
 				 & = \tr_{L\Gamma}\left( \sum_{i,j=1}^n{
-				 \left( \overline{x}_i x_j \right)
+				 \left( \ol{x}_i x_j \right)
 				\left( \lambda_{g_i} \lambda_{g_j}^* \right)
 				\varphi(\lambda_{g_i}^* \lambda_{g_j})} \right)
 			\end{align*}
@@ -135,25 +137,117 @@ Functional Analysis 2\\
 		
 		Let $A,B\in M$ be commuting positive operators. The product of commuting normal elements is normal, so it suffices to show that $\spec(AB)\subseteq\mathbb{R}$. We claim that $\Spec(AB)\subseteq\Spec(A)\Spec(B)$. If we let $N=\set{A,B}''$, then $N$ is a commuting von Neumann algebra, so by taking the Gelfand transform, $\Spec_N(B)\subseteq\Spec_N(A)\Spec_N(B)$. Now $\Spec_M\subseteq\Spec_N$, since $M\supseteq N$. However, $\Spec_N(A)=\Spec_M(A)$, because if $A-\lambda I$ is invertible in $A$, then by the continuous functional calculus, the inverse commutes with $A$ and $B$, and is therefore in $N$; similarly for $B$. Therefore, $\Spec_M(AB)\subseteq\Spec_N(AB)\subseteq\Spec_M(A)\Spec_M(B)\subseteq\mathbb{R}$. 
 		\end{proof}
-	\item
-		\begin{enumerate}
-			\item 
-			\item 
-		\end{enumerate}
-	\item 
 	% \item
 	% 	\begin{enumerate}
 	% 		\item 
 	% 		\item 
 	% 	\end{enumerate}
 		\setcounter{enumi}{111}
-	\item
+	\item	Suppose that $\Gamma$ is a countable discrete group such that every cocycle is inner.
+		Suppose $(H, \pi)$ is a unitary representation and $(\xi_n) \subseteq H$
+		is a sequence of unit vectors such that $\|\pi_g\xi_n - \xi_n\| \to 0$ as $n \to \infty$
+		for all $g \in \Gamma$.
+		Follow the steps below to find a nonzero $\Gamma$-invariant vector in $H$.
 		\begin{enumerate}
-			\item 
-			\item 
-			\item 
-			\item 
-			\item 
+			\item Enumerate $\Gamma = \{g_1, g_2, \dots\}$.
+				Explain why you can pass to a subsequence of $(\xi_n)$ to assume that
+				for all $n \in \N$, $\|\pi_{g_i}\xi_n - \xi_n\| < 4^{-n}$ for all $1 \le i \le n$.
+				\begin{proof}
+					Since $\|\pi_{g_1}\xi_n - \xi_n\| \to 0$ as $n \to \infty$, we may
+					choose $n_1 \in \N$ so that $\|\pi_{g_1}\xi_{n_1} - \xi_{n_1}\| < \frac{1}{4}$.
+					
+					Suppose we have $n_1 < n_2 < \dots < n_k$ so that
+					$\|\pi_{g_i}\xi_{n_k} - \xi_{n_k}\| < 4^{-k}$ for all $1 \le i \le k$.
+					For each $1 \le i \le k + 1$, choose $N_i \in \N$ so that
+					$\|\pi_{g_i}\xi_n - \xi_n\| < 4^{-(k+1)}$ for all $n \ge N_i$.
+					Set $n_{k+1} := \max\{N_1, \dots, N_{k+1}, n_k + 1\}$.
+					Then $n_{k+1} > n_k$ and $n_{k+1} \ge N_i$ for each $1 \le i \le k+1$, so
+					$\|\pi_{g_i}\xi_{n_{k+1}} - \xi_{n_{k+1}}\| < 4^{-(k+1)}$ for all $1 \le i \le k+1$.
+					
+					Replacing $(\xi_n)_{n \in \N}$ with $(\xi_{n_k})_{k \in \N}$
+					gives a sequence of unit vectors with the desired property.
+				\end{proof}
+			\item For $n \in \N$, consider the inner cocycles $\beta_n(g) := \xi_n - \pi_g\xi_n$.
+				Let $(K, \sigma) = \bigoplus_{n \in \N}{(H, \pi)}$.
+				Define $\beta : \Gamma \to K$ by $\beta(g)_n = 2^n \beta_n(g)$.
+				Prove that $\beta(g) \in H$ is well-defined for every $g \in \Gamma$.
+				Then show $\beta$ is a cocycle for $(H, \pi)$.
+				\begin{proof}
+					Let $g \in \Gamma$.
+					To show that $\beta(g)$ is well-defined, it suffices to show
+					$\left( \|\beta(g)_n\| \right)_{n \in \N} \in \ell^2\N$.
+					Suppose $N \in \N$ such that $g = g_N$ is the enumeration from (1).
+					Then
+					\begin{align*}
+						\sum_{n \in \N}{\|\beta(g)_n\|^2} & = \sum_{n \in \N}{\|2^n \beta_n(g)\|^2} \\
+						 & = \sum_{n \in \N}{4^n \|\pi_{g_N} \xi_n - \xi_n\|^2} \\
+						 & \le \sum_{n=1}^{N-1}{4^n \|\pi_{g_N} \xi_n - \xi_n\|^2} 
+						 + \sum_{n=N}^{\infty}{4^n (4^{-n})^2} \\
+						 & = \sum_{n=1}^{N-1}{4^n \|\pi_{g_N} \xi_n - \xi_n\|^2}
+						 + \frac{4^{-(N-1)}}{3} \\
+						 & < \infty.
+					\end{align*}
+					
+					Now we must check that $\beta$ is a cocycle.
+					Let $g, h \in \Gamma$.
+					Since $\beta_n$ is a cocycle for each $n \in \N$, we have
+					\begin{align*}
+						\beta(gh) & = \left( 2^n \beta_n(gh) \right)_{n \in \N} \\
+						 & = \left( 2^n (\beta_n(g) + \pi_g\beta_n(h)) \right)_{n \in \N} \\
+						 & = \left( 2^n \beta_n(g) \right)_{n \in \N}
+						 + \left( \pi_g 2^n \beta_n(h) \right)_{n \in \N} \\
+						 & = \left( 2^n \beta_n(g) \right)_{n \in \N}
+						 + \sigma_g \left( 2^n \beta_n(h) \right)_{n \in \N} \\
+						 & = \beta(g) + \sigma_g \beta(h).
+					\end{align*}
+					That is, $\beta$ is a cocycle.
+				\end{proof}
+			\item Deduce $\beta$ is inner and bounded.
+				Thus there exists a $\kappa \in K \setminus \{0\}$
+				such that $\beta(g) = \kappa - \sigma_g \kappa$ for all $g \in \Gamma$.
+				\begin{proof}
+					This follows immediately from the assumption that every cocycle is inner.
+				\end{proof}
+			\item Prove that $\|\beta_n(g)\| \to 0$ uniformly for $g \in \Gamma$.
+				That is, show for all $\eps > 0$, there is an $N \in \N$ such that
+				$n > N$ implies $\|\beta_n(g)\| < \eps$ for all $g \in \Gamma$.
+				\begin{proof}
+					Let $\eps > 0$.
+					Choose $N \in \N$ with $N > 1 + \log_2{\frac{\|\kappa\|}{\eps}}$.
+					Then for $n > N$ and $g \in \Gamma$, we have
+					\begin{align*}
+						\|\beta_n(g)\|_H & = 2^{-n}\|\kappa_n - \pi_g\kappa_n\|_H \\
+						 & \le 2^{-(n-1)} \|\kappa_n\|_H \\
+						 & \le 2^{-(N-1)} \|\kappa\|_K \\
+						 & < \eps.
+					\end{align*}
+				\end{proof}
+			\item Fix $N \in \N$ such that $\|\beta_N(g)\| = \|\xi_N - \pi_g\xi_N\| < 1$
+				for all $g \in \Gamma$.
+				Show that there is a $\xi_0 \in H \setminus \{0\}$
+				such that $\pi_g\xi_0 = \xi_0$ for all $g \in \Gamma$.
+				\begin{proof}
+					Let $B := \{\pi_g\xi_N : g \in \Gamma\}$.
+					Since $\pi$ is a unitary representation, $B \subseteq H_1$ is bounded.
+					Let $f : H \to B$ be given by $f(\eta) := \sup_{\xi \in B}{\|\eta - \xi\|}$.
+					Observe that $f$ is $\pi$-invariant:
+					\begin{align*}
+						f(\pi_g\eta) & = \sup_{\xi \in B}{\|\pi_g\eta - \xi\|} \\
+						 & = \sup_{h \in \Gamma}{\|\pi_g\eta - \pi_h \xi_N\|} \\
+						 & = \sup_{h \in \Gamma}{\|\eta - \pi_{g^{-1}h} \xi_N\|} \\
+						 & = \sup_{k \in \Gamma}{\|\eta - \pi_k \xi_N\|} \\
+						 & = \sup_{\xi \in B}{\|\eta - \xi\|} \\
+						 & = f(\eta).
+					\end{align*}
+					
+					Now by problem 106, $f$ achieves its minimum at a unique point $\xi_0 \in H$.
+					Since $f(\pi_g\xi_0) = f(\xi_0)$ for all $g \in \Gamma$,
+					uniqueness implies that $\xi_0$ is a $\Gamma$-invariant vector.
+					
+					Finally, $f(\xi_N) = \sup_{g \in \Gamma}{\|\beta_N(g)\|} \le 1 = f(0)$,
+					and $\xi_N \ne 0$, so the unique point $\xi_0$ at which $f$ achieves its minimum
+					must be a nonzero vector.
+				\end{proof}
 		\end{enumerate}
 \end{enumerate}
 
