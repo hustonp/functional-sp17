@@ -109,25 +109,26 @@ Functional Analysis 2\\
 				% If $\Phi(1_A)=0$, then $\varphi(1_A)=0$, and since $\varphi$ is positive, $\varphi=0$. % Maybe we don't need this if we aren't asking for $\Phi$ unital?
 				Stinespring's theorem says that completely positive maps from a unital {\csa} are precisely conjugations of *-homomorphisms by a morphism of Hilbert spaces. Therefore, we attempt to find such a decomposition for $\Phi$. 
 				% Stinespring: $\Phi$ is unital iff the morphism of Hilbert spaces is an isometry. But maybe we can avoid running in this case. 
-				As usual, the GNS construction gives a Hilbert space $H=L^2(A,\psi)$ with a representation $\pi_\psi:M_n(A)\to B(H^n)$ with cyclic vector $\vec{\Omega}_\psi$ and inner product $\ggen{B\vec{\Omega}_\psi|C\vec{\Omega}\psi}=\psi(B^*C)$. 
+				As usual, the GNS construction gives a Hilbert space $H=L^2(M_n(A),\psi)$ with a representation $\pi_\psi:M_n(A)\to B(H^n)$ with cyclic vector $\Omega_\psi$ and inner product $\ggen{B\Omega_\psi|C\Omega_\psi}=\psi(B^*C)$. 
 				% Since properties of positivity and complete positivty are preserved by multiplication by positive scalars, we may as well normalize $\Phi$ so that $\Omega_\varphi$ is also a unit vector. % This is not true when $\varphi(1_A)=0$, in which case we only have a trivial representation. In which case the proof is very strange. 
-				Fix $m\in\N$. Let $(e_i)_{i=1}^m$ be the standard basis for $\C^n$, i.e $e_1=(1,0,0,\ldots, 0)$, $e_2=(0,1,0,\ldots 0)$, etc. Let $((E_{ij})_{i=1}^m)_{j=1}^m$ be the system of matrix units for $M_m(\C)$ such that $E_{ij}[i,j]=1$ all other entries of $E_{ij}$ are $0$.
+				Fix $n\in\N$. Let $(e_i)_{i=1}^n$ be the standard basis for $\C^n$, i.e $e_1=(1,0,0,\ldots, 0)$, $e_2=(0,1,0,\ldots 0)$, etc. Let $((E_{ij})_{i=1}^n)_{j=1}^n$ be the system of matrix units for $M_n(\C)$ such that $E_{ij}[i,j]=1$ all other entries of $E_{ij}$ are $0$.
 				(It is possible that an arbitrary choice of basis and system of matrix units would suffice, but the definition of $\varphi$ seems basis dependent, making such a generalization tedious at best. In our defense, this seems true of $\varphi$ as well.)
-				Let $\iota:M_m(\C)\to M_m(A)$ be induced by the structural morphism $\C\to A$. For brevity, we identify each $M$ with $\iota(M)$. Finally, let $h:A\to M_n(A)$ be the map so that for every $a\in A$ and $(i,j)$, we have $h(a)_{ij}=n^{-1/2}a$. Notice that $h$ is a non-unital (unless $n=1$) $*$-homomorphism. Since $\Phi$ might be non-unital as it is, this need not be too disturbing. 
+				Let $\iota:M_n(\C)\to M_n(A)$ be induced by the structural morphism $\C\to A$. For brevity, we identify each $M$ with $\iota(M)$. Finally, let $h:A\to M_n(A)$ be the map so that for every $a\in A$ and $(i,j)$, we have $h(a)_{ij}=n^{-1/2}a$. Notice that $h$ is a non-unital (unless $n=1$) $*$-homomorphism. Since $\Phi$ might be non-unital as it is, this need not be too disturbing. 
 				
-				Define $V:\C^n\to H^n$ by $Ve_i=\pi_\psi(E_{i1})\vec{\Omega}_\psi$. Set $\Lambda:M_n(A)\to M_n(\C)$ by $\Lambda(B)=V^*BV$. As we know well, $\Lambda$ must be completely positive. It can happen that $V$ is not an isometry, and indeed, this must happen if every $\psi$ is not unital. 
+				Define $V:\C^n\to H^n$ by $Ve_i=\pi_\psi(E_{i1})\Omega_\psi$. Set $\Lambda:M_n(A)\to M_n(\C)$ by $\Lambda(B)=V^*\pi_\psi(B)V$. As we know well, $\Lambda$ must be completely positive. It can happen that $V$ is not an isometry, and indeed, this must happen if ever $\psi$ is not unital. 
 				(It seems that this is unavoidable even by a better attack to the problem, because no matter what we do, we may simply have $\Phi=0$, or more generally, $\img(\Phi)$ may not have full rank.) 
 				We claim that $\Phi=\Lambda\circ h$, making $\Phi$ the composition of completely positive maps, and hence completely positive. Observe: if $a\in A$, 
 				\begin{align*}
 					\Lambda(h(a))_{ij} &= \ggen{e_j|\Lambda(h(a))e_i}\\
 					&= \ggen{e_j|V^*\pi_\psi(h(a))Ve_i}_{\C^n}\\
-					&= \ggen{\vec{\Omega}_\psi|\pi_\psi(E_{1j}h(a)E_{i1})\vec{\Omega}_\psi}_{H^n}\\
+					&= \ggen{\Omega_\psi|\pi_\psi(E_{1j}h(a)E_{i1})\Omega_\psi}_{H^n}\\
 					&= n^{1/2}\sum_{k,\ell}\Phi((E_{1j}h(a)E_{i1})[k,\ell])_{k,\ell}\\
 					&= n^{1/2}\Phi(h(a)_{ij})_{ij}\\
 					&= n^{1/2}n^{-1/2}\Phi(a)_{ij}\\
 					&= \Phi(a)_{ij}
 				\end{align*}
 				as desired. 
+<<<<<<< HEAD
 			      \item Take $s \in S$ positive with $\NK s \KN \leq 1$.  Then $s \leq 1_S$, else there exists a unit vector $h \in H$ with $\ET h \mid s h \TE > 1$, which is impossible.\\
                                 Thus $\sup \ER \MG \ws \E s \R \GM \mid s \in \E S_+ \R_1 \RE = \ws \E 1 \R$.\\
                                 Since every element can be written as a linear combination of positive elements, this suffices to show that $\NK \ws \KN = \ws \E 1 \R$.\\
@@ -136,6 +137,10 @@ Functional Analysis 2\\
                                 
                                 
 			\item 
+=======
+			\item 
+			\item By part (1), from $\Phi$, we obtain some positive linear functional $\psi:M_n(S)\to\C$. Using Hahn-Banach, we extend to $M_n(A)$. Applying the construction of part (1), we get $\Lambda:M_n(A)\to M_n(\C)$ completely positive. Define $\widetilde{\Phi}=\Lambda\circ h$. Following the logic of part (1), we will have $\Lambda\circ h|_S=\Phi$, so $\widetilde{\Phi}|_A=\Phi$. Since $1_A\in S$, if $\Phi$ is unital, so is $\widetilde{\Phi}$. 
+>>>>>>> 7a10d62befc6ce02996412ab84d03ad92dcda3e8
 		\end{enumerate}
 	\item	Suppose $\Gamma$ is a countable discrete group,
 		and suppose $\varphi : L\Gamma \to L\Gamma$ is a normal completely positive map.
