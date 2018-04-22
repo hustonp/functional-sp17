@@ -98,7 +98,26 @@ Functional Analysis 2\\
 \end{center}
 \begin{enumerate}
 		\setcounter{enumi}{113}
-	\item 
+	\item Suppose $\Gamma$ is a countable group and $(H, \pi)$ is a unitary representation
+		on a separable Hilbert space.
+		Find a unitary $u \in B(\ell^2\Gamma \ol{\otimes} H)$ intertwining $\lambda \otimes \pi$
+		and $\lambda \otimes 1$, i.e. $u(\lambda_g \otimes \pi_g) = (\lambda_g \otimes 1)u$
+		for all $g \in \Gamma$.
+		\begin{proof}
+			Define $u \in B(\ell^2\Gamma \ol{\otimes} H)$ by
+			$u(\delta_g \otimes \xi) := \delta_g \otimes \pi_{g^{-1}}\xi$
+			for $g \in \Gamma$ and $\xi \in H$.
+			This defines a unitary operator, since $\pi$ is a unitary representation.
+			We will check that $u$ intertwines $\lambda \otimes \pi$ and $\lambda \otimes 1$.
+			For $h \in \Gamma$ and $\xi \in H$, we have
+			\begin{align*}
+				u(\lambda_g \otimes \pi_g)(\delta_h \otimes \xi)
+				 & = u(\delta_{gh} \otimes \pi_g\xi) \\
+				 & = \delta_{gh} \otimes \pi_{h^{-1}}\xi \\
+				 & = (\lambda_g \otimes 1)(\delta_h \otimes \pi_{h^{-1}}\xi) \\
+				 & = (\lambda_g \otimes 1)u(\delta_h \otimes \xi). \\
+			\end{align*}
+		\end{proof}
 	\item 
 		\begin{enumerate}
 				\setcounter{enumi}{1}
