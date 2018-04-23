@@ -160,7 +160,35 @@ Functional Analysis 2\\
 				\end{align*}
 			\item Analagous to (5), we obtain $(v^*(L^\infty(X,\mu)\unlhd\Gamma)v)'=v^*(L^\infty(X,\mu)\unlhd\Gamma)'v\subseteq R\mathcal{R}\subseteq L\mathcal{R}'$, so $v^*(L^\infty(X,\mu)\unlhd\Gamma)v\supseteq L\mathcal{R}$, completing the proof. 
 		\end{enumerate}
-	\item 
+
+
+
+
+
+              \item For each $f \in L^\infty \E X , \mu \R \subs L \mathcal R$, we have
+
+                \begin{align*}
+                  \E f \cdot \xi \R \E x , y \R = f \E x \R \xi \E x , y \R
+                \end{align*}
+
+                and for $g \in J A J \subs L \mathcal R' = R \mathcal R$ we have
+
+                \begin{align*}
+                  \E g \cdot \xi \R \E x , y \R = g \E y \R \xi \E x , y \R.
+                \end{align*}
+
+                Then we have $A \subs L^\infty \mathcal R$ and $J A J \subs L^\infty \mathcal R$, by viewing $f \in A$ as $f \otimes 1 \in L^\infty \mathcal R$, and viewing $g \in J A J$ as $1 \otimes g \in L^\infty \mathcal R$.\\
+                Thus $A \cup J A J \subs L^\infty \E \mathcal R \R$, and now we show the other inclusion.  It suffices to show that $A \cup J A J$ is dense in $L^\infty \mathcal R$.\\
+                To do this we just need to show that rectangles of the form $\E f \otimes 1 \R$ $\E 1 \otimes g \R$ for $f , g \in L^\infty \E X , \mu \R$ are SOT dense in $L^\infty \mathcal R$.\\
+                It suffices to show that the indicators of rectangles are SOT dense in indicators of $\mathcal R$-measurable sets.  However, this follows from the definition of product measures - all measurable sets can be approximated by rectangles: for $A , B \subs X$ and $C \subs X \times X$, we have
+
+                \begin{align*}
+                  \NK \mathbbm 1_{A \times B} - \mathbbm 1_C \KN%
+                  &= \mu \E \E A \times B \R \symdif C \R,
+                \end{align*}
+
+                and for all $C$ we can choose $A , B$ such that this symmetric difference is small.\\
+                $\qed$
 \end{enumerate}
 
 \end{document}          
